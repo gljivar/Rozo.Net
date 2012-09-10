@@ -1,0 +1,5 @@
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Utility\bin\Debug\Utility.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Utility\bin\Debug\Utility.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Utility\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Utility\obj\Debug\Utility.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Utility\obj\Debug\Utility.pdb
