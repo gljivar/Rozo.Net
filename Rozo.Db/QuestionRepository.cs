@@ -17,7 +17,7 @@ namespace Rozo.Db
                 Solved = false, 
                 Text = "Are you blind?", 
                 MultipleSolutions = false, 
-                ProvidedAnswers = new List<Answer>() { new Answer() { Id = 0, Text = "Yes" }, new Answer() { Id = 1, Text = "No"} },
+                ProvidedAnswers = new List<ProvidedAnswer>() { new ProvidedAnswer() { Id = 0, Text = "Yes" }, new ProvidedAnswer() { Id = 1, Text = "No"} },
                 Tags = new List<Tag>() { new Tag() { Id=0, Name = "Computer science" } }
             },
             new Question() {
@@ -26,7 +26,7 @@ namespace Rozo.Db
                 Solved = false, 
                 Text = "Are you cool?", 
                 MultipleSolutions = false, 
-                ProvidedAnswers = new List<Answer>() { new Answer() { Id = 2, Text = "Yes" }, new Answer() { Id = 3, Text = "No"}, new Answer() { Id = 3, Text = "Sometimes"}  },
+                ProvidedAnswers = new List<ProvidedAnswer>() { new ProvidedAnswer() { Id = 2, Text = "Yes" }, new ProvidedAnswer() { Id = 3, Text = "No"}, new ProvidedAnswer() { Id = 3, Text = "Sometimes"}  },
                 Tags = new List<Tag>() { new Tag() { Id=1, Name = "Math" } }
             }
         };

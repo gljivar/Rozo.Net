@@ -1,0 +1,9 @@
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Rozo.DTO.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Rozo.DTO.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Rozo.Model.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Utility.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Rozo.Model.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Utility.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\obj\Debug\Rozo.DTO.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\obj\Debug\Rozo.DTO.pdb

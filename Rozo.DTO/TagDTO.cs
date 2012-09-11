@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Interfaces;
 
-namespace Rozo.Model
+namespace Rozo.DTO
 {
-    public class Answer
+    public class TagDTO : IDTO
     {
         public int Id
         {
@@ -13,7 +14,7 @@ namespace Rozo.Model
             set;
         }
 
-        public string Text
+        public string Name
         {
             get;
             set;

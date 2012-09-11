@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Interfaces;
 
 namespace Rozo.Model
 {
-    public class Question
+    public class Question : IModelObject
     {
-        public int? Id
+        public int Id
         {
             get;
             set;
@@ -25,7 +26,7 @@ namespace Rozo.Model
             set;
         }
 
-        public User AddBy
+        public User AddedBy
         {
             get;
             set;
@@ -49,7 +50,7 @@ namespace Rozo.Model
             set;
         }
 
-        public List<Answer> ProvidedAnswers
+        public List<ProvidedAnswer> ProvidedAnswers
         {
             get;
             set;

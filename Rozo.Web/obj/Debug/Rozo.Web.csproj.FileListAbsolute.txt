@@ -7,6 +7,7 @@ C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Mi
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Newtonsoft.Json.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.Db.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.DTO.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.Model.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\System.Net.Http.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\System.Net.Http.Formatting.dll
@@ -25,6 +26,7 @@ C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Ut
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\WebGrease.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Microsoft.Practices.ServiceLocation.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.Db.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.DTO.pdb
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.Model.pdb
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Utility.pdb
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Microsoft.Practices.Unity.pdb

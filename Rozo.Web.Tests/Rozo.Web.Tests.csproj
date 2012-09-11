@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\QuestionControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\ValuesControllerTest.cs" />
   </ItemGroup>
@@ -107,9 +108,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Rozo.Db\Rozo.Db.csproj">
+      <Project>{EFBAAC52-4D27-498D-ACA7-00D3342E9BCE}</Project>
+      <Name>Rozo.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rozo.DTO\Rozo.DTO.csproj">
+      <Project>{1E4CDB71-734E-4343-97FF-44011F2DD629}</Project>
+      <Name>Rozo.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rozo.Model\Rozo.Model.csproj">
+      <Project>{48C33EDB-8EBB-4B5E-8C08-7A88ADB49457}</Project>
+      <Name>Rozo.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Rozo.Web\Rozo.Web.csproj">
       <Project>{20BC2C69-E767-41EA-B049-1A7D5507BD63}</Project>
       <Name>Rozo.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{2AB91EE9-DE9D-4C7E-AD40-AC4ECF5C4948}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

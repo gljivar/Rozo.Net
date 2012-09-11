@@ -40,10 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Answer.cs" />
+    <Compile Include="ProvidedAnswer.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="Rating.cs" />
     <Compile Include="Solution.cs" />
     <Compile Include="SpecialCase\MissingQuestion.cs" />
     <Compile Include="Tag.cs" />

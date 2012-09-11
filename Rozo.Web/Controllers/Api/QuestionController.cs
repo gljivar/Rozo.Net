@@ -6,6 +6,9 @@ using System.Net.Http;
 using System.Web.Http;
 using Rozo.Model;
 using Utility.Interfaces;
+using Rozo.Model.SpecialCase;
+using Rozo.DTO.Adapters;
+using Rozo.DTO;
 
 namespace Rozo.Web.Controllers.Api
 {
@@ -24,31 +27,29 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // GET api/question
-        public IEnumerable<Question> Get()
+        public IEnumerable<QuestionDTO> Get()
         {
-            return repository.GetAll();
+            return new QuestionDTOAdapter().InitializeDTOs(repository.GetAll());
         }
 
         // GET api/question/5
-        public string Get(int id)
+        public QuestionDTO Get(int id)
         {
-            return "value";
-
-            //var product = products.FirstOrDefault((p) => p.Id == id);
-            //if (product == null)
-            //{
-            //    throw new HttpResponseException(HttpStatusCode.NotFound);
-            //}
-            //return product;
+            var question = repository.GetById(id);
+            if (question is MissingQuestion)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return new QuestionDTOAdapter().InitializeDTO(question);
         }
 
         // POST api/question
-        public void Post([FromBody]string value)
+        public void Post(QuestionDTO question)
         {
         }
 
         // PUT api/question/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, QuestionDTO question)
         {
         }
 

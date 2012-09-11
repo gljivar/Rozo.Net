@@ -1,55 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Rozo.Model.Question">
-    <Position X="6" Y="4.5" Width="1.5" />
+    <Position X="7" Y="6" Width="1.5" />
+    <AssociationLine Name="Solutions" Type="Rozo.Model.Solution" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="6.959" />
+        <Point X="4.24" Y="6.959" Type="JumpStart" />
+        <Point X="4.073" Y="6.959" Type="JumpEnd" />
+        <Point X="3.938" Y="6.959" />
+        <Point X="3.938" Y="6.046" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AACCABAAAAAAIAAAABAAAAAIAAAAAEAEAAAAAAQACAA=</HashCode>
+      <HashCode>AACCABCAAAAAIAAAABAAAAAIAAAAAEAAAAAACAAACAA=</HashCode>
       <FileName>Question.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="AddBy" />
       <Property Name="Category" />
+      <Property Name="AddedBy" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="ProvidedAnswers" />
-      <Property Name="Solutions" />
       <Property Name="Tags" />
+      <Property Name="Solutions" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Rozo.Model.Answer">
-    <Position X="2.5" Y="4.25" Width="1.5" />
+  <Class Name="Rozo.Model.ProvidedAnswer">
+    <Position X="11.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>Answer.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
+      <FileName>ProvidedAnswer.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Question" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Rozo.Model.Category">
-    <Position X="2.5" Y="6" Width="1.5" />
+    <Position X="11.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAACAAAAAAQAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Category.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Rozo.Model.Solution">
-    <Position X="10.75" Y="6" Width="1.5" />
+    <Position X="3" Y="4.75" Width="1.5" />
+    <AssociationLine Name="Ratings" Type="Rozo.Model.Rating" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="5.812" />
+        <Point X="2.625" Y="5.812" />
+        <Point X="2.625" Y="7.64" />
+        <Point X="2.25" Y="7.64" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAACAAAAAAAAAAgAAAAAAAAAAAAAEAAAACAAAAAA=</HashCode>
       <FileName>Solution.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Question" />
+      <Property Name="AddedBy" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Ratings" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Rozo.Model.Tag">
-    <Position X="6" Y="7.25" Width="1.5" />
+    <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tag.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Rozo.Model.User">
-    <Position X="10.75" Y="4.25" Width="1.5" />
+    <Position X="5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Rozo.Model.Rating">
+    <Position X="0.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rating.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RatedBy" />
+      <Property Name="Solution" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

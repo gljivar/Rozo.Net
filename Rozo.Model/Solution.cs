@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Interfaces;
 
 namespace Rozo.Model
 {
-    public class Solution
+    public class Solution : IModelObject
     {
         public int Id
         {
@@ -18,5 +19,31 @@ namespace Rozo.Model
             get;
             set;
         }
+
+        public Question Question
+        {
+            get;
+            set;
+        }
+
+        public User AddedBy
+        {
+            get;
+            set;
+        }
+
+        public DateTime DateAdded
+        {
+            get;
+            set;
+        }
+
+        public List<Rating> Ratings
+        {
+            get;
+            set;
+        }
+
+        
     }
 }

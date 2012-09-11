@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b0782102-0c87-4c21-bdb8-c0f4276e4606" name="Miroslav@ASUS-N55SF 2012-09-11 20:55:17" runUser="ASUS-N55SF\Miroslav" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="d5fe5e02-9436-4c87-9183-87c222f07511">
+    <Deployment runDeploymentRoot="Miroslav_ASUS-N55SF 2012-09-11 20_55_17">
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web\bin\Rozo.Web.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Model\bin\Debug\Rozo.Model.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\bin\Debug\Rozo.Db.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Utility\bin\Debug\Utility.dll" />
+      <DeploymentItem filename="C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-09-11T20:55:17.3835220+02:00" queuing="2012-09-11T20:55:17.7775445+02:00" start="2012-09-11T20:55:17.7865450+02:00" finish="2012-09-11T20:55:18.0765616+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetById" storage="c:\users\miroslav\documents\visual studio 2010\projects\rozo.net\rozo.web.tests\bin\debug\rozo.web.tests.dll" id="0a310637-62d5-050a-8493-d36f95da9684">
+      <Execution id="eadd3796-9627-45e3-994f-7c9bf950c587" />
+      <TestMethod codeBase="C:/Users/Miroslav/Documents/Visual Studio 2010/Projects/Rozo.Net/Rozo.Web.Tests/bin/Debug/Rozo.Web.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Rozo.Web.Tests.Controllers.QuestionControllerTest, Rozo.Web.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetById" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0a310637-62d5-050a-8493-d36f95da9684" executionId="eadd3796-9627-45e3-994f-7c9bf950c587" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="eadd3796-9627-45e3-994f-7c9bf950c587" testId="0a310637-62d5-050a-8493-d36f95da9684" testName="GetById" computerName="ASUS-N55SF" duration="00:00:00.0713965" startTime="2012-09-11T20:55:17.7895452+02:00" endTime="2012-09-11T20:55:18.0485600+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eadd3796-9627-45e3-994f-7c9bf950c587">
+    </UnitTestResult>
+  </Results>
+</TestRun>
