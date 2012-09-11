@@ -56,6 +56,7 @@ namespace Rozo.Web.Controllers.Api
         // DELETE api/question/5
         public void Delete(int id)
         {
+            repository.DeleteById(id);
         }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IDataMapper.cs" />
     <Compile Include="Interfaces\IDTO.cs" />
     <Compile Include="Interfaces\IDTOAdapter.cs" />
     <Compile Include="Interfaces\IModelObject.cs" />

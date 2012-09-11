@@ -7,9 +7,9 @@ using Rozo.Model.SpecialCase;
 
 namespace Rozo.Db
 {
-    public class QuestionRepository : Utility.Interfaces.IRepository<Question>
+    public class QuestionRepository : Utility.Interfaces.IRepository<Question>//, Utility.Interfaces.IDataMapper<Question>
     {
-        private List<Question> questions = new List<Question>()
+        private static List<Question> questions = new List<Question>()
         {
             new Question() {
                 Id = 0, 
@@ -49,6 +49,31 @@ namespace Rozo.Db
             else
             {
                 return new MissingQuestion();
+            }
+        }
+
+        public void Create(Question item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Question item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Question item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteById(int id)
+        {
+            var questionsToRemove = questions.ToList().Where(q => q.Id == id);//.Select(q => q.Id);
+            foreach(var questionToRemove in questionsToRemove)
+            {
+                //questions.Remove(questions.Single(q => q.Id == idToRemove));
+                questions.Remove(questionToRemove);
             }
         }
     }

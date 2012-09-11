@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Utility.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<T> : IDataMapper<T>
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
