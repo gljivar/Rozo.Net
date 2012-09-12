@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class CategoryController : ApiController
+    public class CategoriesController : ApiController
     {
         // GET api/category
         public IEnumerable<string> Get()

@@ -31,5 +31,11 @@ namespace Rozo.Model
             get;
             set;
         }
+
+        public virtual List<Question> Questions
+        {
+            get;
+            set;
+        }
     }
 }

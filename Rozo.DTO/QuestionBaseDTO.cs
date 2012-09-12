@@ -6,7 +6,7 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class QuestionForListDTO : IDTO
+    public class QuestionBaseDTO : IDTO
     {
         public int Id
         {
@@ -20,7 +20,7 @@ namespace Rozo.DTO
             set;
         }
 
-        public int Category
+        public int? Category
         {
             get;
             set;
@@ -45,12 +45,6 @@ namespace Rozo.DTO
         }
 
         public bool MultipleSolutions
-        {
-            get;
-            set;
-        }
-
-        public List<TagDTO> Tags
         {
             get;
             set;

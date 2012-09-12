@@ -17,5 +17,6 @@ namespace Rozo.DTO.Adapters
                 yield return InitializeDTO(modelObject);
             }
         }
+
     }
 }

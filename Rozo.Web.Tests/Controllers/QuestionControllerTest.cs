@@ -17,10 +17,10 @@ namespace Rozo.Web.Tests.Controllers
         public void Get()
         {
             // Arrange
-            QuestionController controller = new QuestionController(new QuestionRepository());
+            QuestionsController controller = new QuestionsController(new QuestionRepository());
 
             // Act
-            IEnumerable<QuestionDTO> result = controller.Get();
+            IEnumerable<QuestionBaseDTO> result = controller.Get();
 
             // Assert
             Assert.IsNotNull(result);
@@ -31,7 +31,7 @@ namespace Rozo.Web.Tests.Controllers
         public void GetById()
         {
             // Arrange
-            QuestionController controller = new QuestionController(new QuestionRepository());
+            QuestionsController controller = new QuestionsController(new QuestionRepository());
 
             // Act
             var result = controller.Get(0);

@@ -22,6 +22,14 @@ namespace Rozo.Model.SpecialCase
                 return "Missing Tag";
             }
         }
+
+        public override List<Question> Questions
+        {
+            get
+            {
+                return new List<Question>();
+            }
+        }
     }
 
 }

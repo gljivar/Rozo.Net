@@ -31,5 +31,11 @@ namespace Rozo.DTO
             get;
             set;
         }
+
+        public List<QuestionDTO> Questions
+        {
+            get;
+            set;
+        }
     }
 }

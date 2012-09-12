@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Utility.Interfaces
 {
-    public interface IDTO : IDTOBase
+    public interface IDTOBase
     {
     }
 }

@@ -12,11 +12,11 @@ using Rozo.DTO;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class QuestionController : ApiController
+    public class QuestionsController : ApiController
     {
         private readonly IRepository<Question> repository;
 
-        public QuestionController(IRepository<Question> repository)
+        public QuestionsController(IRepository<Question> repository)
         {
             if (repository == null)
             {
@@ -27,9 +27,9 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // GET api/question
-        public IEnumerable<QuestionDTO> Get()
+        public IEnumerable<QuestionBaseDTO> Get()
         {
-            return new QuestionDTOAdapter().InitializeDTOs(repository.GetAll());
+            return new QuestionDTOAdapter().InitializeBaseDTOs(repository.GetAll());
         }
 
         // GET api/question/5

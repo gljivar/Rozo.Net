@@ -17,10 +17,24 @@ namespace Rozo.Web
         public static void RegisterIoC(HttpConfiguration config)
         {
             var unity = new UnityContainer();
-            unity.RegisterType<QuestionController>();
-            unity.RegisterType<IRepository<Question>, QuestionRepository>(
-                new HierarchicalLifetimeManager());
+
+            RegisterTypes(unity);
+            
             config.DependencyResolver = new IoCContainer(unity);
         }
+
+        private static void RegisterTypes(IUnityContainer unity)
+        {
+            // Questions
+            unity.RegisterType<QuestionsController>();
+            unity.RegisterType<IRepository<Question>, QuestionRepository>(
+                new HierarchicalLifetimeManager());
+
+            // Tags
+            unity.RegisterType<TagsController>();
+            unity.RegisterType<IRepository<Tag>, TagRepository>(
+                new HierarchicalLifetimeManager());
+        }
+
     }
 }

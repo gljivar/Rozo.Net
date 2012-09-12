@@ -6,50 +6,8 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class QuestionDTO : IDTO
+    public class QuestionDTO : QuestionBaseDTO
     {
-        public int Id
-        {
-            get;
-            set;
-        }
-
-        public string Question
-        {
-            get;
-            set;
-        }
-
-        public int? Category
-        {
-            get;
-            set;
-        }
-
-        public UserDTO AddedBy
-        {
-            get;
-            set;
-        }
-
-        public bool Solved
-        {
-            get;
-            set;
-        }
-
-        public bool Open
-        {
-            get;
-            set;
-        }
-
-        public bool MultipleSolutions
-        {
-            get;
-            set;
-        }
-
         public List<ProvidedAnswerDTO> ProvidedAnswers
         {
             get;
@@ -67,6 +25,5 @@ namespace Rozo.DTO
             get;
             set;
         }
-
     }
 }

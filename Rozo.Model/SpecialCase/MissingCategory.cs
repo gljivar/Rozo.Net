@@ -38,5 +38,13 @@ namespace Rozo.Model.SpecialCase
                 return false;
             }
         }
+
+        public override List<Question> Questions
+        {
+            get
+            {
+                return new List<Question>();
+            }
+        }
     }
 }

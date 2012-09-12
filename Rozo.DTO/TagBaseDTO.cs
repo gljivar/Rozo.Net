@@ -6,9 +6,15 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class TagDTO : TagBaseDTO
+    public class TagBaseDTO : IDTO
     {
-        public List<QuestionDTO> Questions
+        public int Id
+        {
+            get;
+            set;
+        }
+
+        public string Name
         {
             get;
             set;
