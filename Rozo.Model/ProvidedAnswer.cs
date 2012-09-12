@@ -8,19 +8,19 @@ namespace Rozo.Model
 {
     public class ProvidedAnswer : IModelObject
     {
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
-        public string Text
+        public virtual string Text
         {
             get;
             set;
         }
 
-        public Question Question
+        public virtual Question Question
         {
             get;
             set;

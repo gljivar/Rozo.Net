@@ -8,25 +8,25 @@ namespace Rozo.Model
 {
     public class Category : IModelObject
     {
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
-        public string Name
+        public virtual string Name
         {
             get;
             set;
         }
 
-        public Category Parent
+        public virtual Category Parent
         {
             get;
             set;
         }
 
-        public bool CanAddQuestion
+        public virtual bool CanAddQuestion
         {
             get;
             set;

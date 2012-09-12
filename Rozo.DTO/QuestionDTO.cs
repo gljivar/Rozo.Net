@@ -67,5 +67,6 @@ namespace Rozo.DTO
             get;
             set;
         }
+
     }
 }

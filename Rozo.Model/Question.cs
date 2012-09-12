@@ -8,61 +8,61 @@ namespace Rozo.Model
 {
     public class Question : IModelObject
     {
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
-        public string Text
+        public virtual string Text
         {
             get;
             set;
         }
 
-        public Category Category
+        public virtual Category Category
         {
             get;
             set;
         }
 
-        public User AddedBy
+        public virtual User AddedBy
         {
             get;
             set;
         }
 
-        public bool Solved
+        public virtual bool Solved
         {
             get;
             set;
         }
 
-        public bool Open
+        public virtual bool Open
         {
             get;
             set;
         }
 
-        public bool MultipleSolutions
+        public virtual bool MultipleSolutions
         {
             get;
             set;
         }
 
-        public List<ProvidedAnswer> ProvidedAnswers
+        public virtual List<ProvidedAnswer> ProvidedAnswers
         {
             get;
             set;
         }
 
-        public List<Tag> Tags
+        public virtual List<Tag> Tags
         {
             get;
             set;
         }
 
-        public List<Solution> Solutions
+        public virtual List<Solution> Solutions
         {
             get;
             set;

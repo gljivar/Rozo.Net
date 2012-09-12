@@ -54,7 +54,7 @@ namespace Rozo.Db
 
         public void Create(Question item)
         {
-            throw new NotImplementedException();
+            questions.Add(item);
         }
 
         public void Update(Question item)
@@ -64,7 +64,7 @@ namespace Rozo.Db
 
         public void Delete(Question item)
         {
-            throw new NotImplementedException();
+            questions.Remove(item);
         }
 
         public void DeleteById(int id)

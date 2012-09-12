@@ -8,13 +8,13 @@ namespace Rozo.Model
 {
     public class User : IModelObject
     {
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
-        public string Name
+        public virtual string Name
         {
             get;
             set;

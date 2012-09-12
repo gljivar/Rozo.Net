@@ -46,7 +46,13 @@
     <Compile Include="Question.cs" />
     <Compile Include="Rating.cs" />
     <Compile Include="Solution.cs" />
+    <Compile Include="SpecialCase\MissingCategory.cs" />
+    <Compile Include="SpecialCase\MissingProvidedAnswer.cs" />
     <Compile Include="SpecialCase\MissingQuestion.cs" />
+    <Compile Include="SpecialCase\MissingRating.cs" />
+    <Compile Include="SpecialCase\MissingSolution.cs" />
+    <Compile Include="SpecialCase\MissingTag.cs" />
+    <Compile Include="SpecialCase\MissingUser.cs" />
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

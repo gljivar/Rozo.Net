@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Rozo.Model.SpecialCase
 {
-    public sealed class MissingQuestion : Question
+    public class MissingSolution : Solution
     {
         public override int Id
         {
@@ -19,15 +19,7 @@ namespace Rozo.Model.SpecialCase
         {
             get
             {
-                return "Missing Question";
-            }
-        }
-
-        public override Category Category
-        {
-            get
-            {
-                return new MissingCategory();
+                return "Missing Solution";
             }
         }
 
@@ -39,27 +31,11 @@ namespace Rozo.Model.SpecialCase
             }
         }
 
-        public override bool Solved
+        public override DateTime DateAdded
         {
             get
             {
-                return false;
-            }
-        }
-
-        public override bool Open
-        {
-            get
-            {
-                return false;
-            }
-        }
-
-        public override bool MultipleSolutions
-        {
-            get
-            {
-                return false;
+                return DateTime.MinValue;
             }
         }
 
@@ -71,19 +47,19 @@ namespace Rozo.Model.SpecialCase
             }
         }
 
-        public override List<Tag> Tags
+        public override Question Question
         {
             get
             {
-                return new List<Tag>();
+                return new MissingQuestion();
             }
         }
 
-        public override List<Solution> Solutions
+        public override List<Rating> Ratings
         {
             get
             {
-                return new List<Solution>();
+                return new List<Rating>();
             }
         }
     }

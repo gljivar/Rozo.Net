@@ -26,8 +26,7 @@ namespace Rozo.Web
                 routeTemplate: "{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            
+ 
         }
     }
 }

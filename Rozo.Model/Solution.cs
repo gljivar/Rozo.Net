@@ -8,37 +8,43 @@ namespace Rozo.Model
 {
     public class Solution : IModelObject
     {
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
-        public string Text
+        public virtual string Text
         {
             get;
             set;
         }
 
-        public Question Question
+        public virtual Question Question
         {
             get;
             set;
         }
 
-        public User AddedBy
+        public virtual User AddedBy
         {
             get;
             set;
         }
 
-        public DateTime DateAdded
+        public virtual DateTime DateAdded
         {
             get;
             set;
         }
 
-        public List<Rating> Ratings
+        public virtual List<Rating> Ratings
+        {
+            get;
+            set;
+        }
+
+        public virtual List<ProvidedAnswer> ProvidedAnswers
         {
             get;
             set;

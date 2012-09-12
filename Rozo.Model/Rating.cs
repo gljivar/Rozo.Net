@@ -8,19 +8,19 @@ namespace Rozo.Model
 {
     public class Rating : IModelObject
     {
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
-        public Solution Solution
+        public virtual Solution Solution
         {
             get;
             set;
         }
 
-        public User RatedBy
+        public virtual User RatedBy
         {
             get;
             set;
