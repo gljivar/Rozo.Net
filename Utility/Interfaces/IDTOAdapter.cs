@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Utility.Interfaces
 {
-    public interface IDTOAdapter<MT, DT>
+    public interface IDTOAdapter<MT, DT> 
+        where MT : IModelObject where DT : IDTOBase
     {
         DT InitializeDTO(MT modelObject);
 

@@ -6,7 +6,7 @@ using Utility.Interfaces;
 
 namespace Rozo.Model
 {
-    public class Question : IModelObject
+    public class Question : IModelObject, IEquatable<Question>
     {
         public virtual int Id
         {
@@ -67,5 +67,40 @@ namespace Rozo.Model
             get;
             set;
         }
+
+        #region Overriden Methods
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            if (this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            return Equals(obj);
+        }
+
+        public bool Equals(Question other)
+        {
+
+            if (this.Id != other.Id)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Id;
+        }
+
+        #endregion
     }
 }

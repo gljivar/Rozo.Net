@@ -6,7 +6,8 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO.Adapters
 {
-    public abstract class DTOAdapterBase<MT, DT> : IDTOAdapter<MT, DT>
+    public abstract class DTOAdapterBase<MT, DT> : IDTOAdapter<MT, DT> 
+        where MT : IModelObject where DT : IDTO
     {
         public abstract DT InitializeDTO(MT modelObject);
 

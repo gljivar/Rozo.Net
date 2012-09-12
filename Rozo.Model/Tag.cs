@@ -6,7 +6,7 @@ using Utility.Interfaces;
 
 namespace Rozo.Model
 {
-    public class Tag : IModelObject
+    public class Tag : IModelObject, IEquatable<Tag>
     {
         public virtual int Id
         {
@@ -25,5 +25,39 @@ namespace Rozo.Model
             get;
             set;
         }
+
+        #region Overriden Methods
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            if (this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            return Equals(obj);
+        }
+
+        public bool Equals(Tag other)
+        {
+            if (this.Name != other.Name)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode();
+        }
+
+        #endregion
     }
 }
