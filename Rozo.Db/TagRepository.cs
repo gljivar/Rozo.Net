@@ -5,61 +5,84 @@ using System.Text;
 using Rozo.Model;
 using Utility.Interfaces;
 using Rozo.Model.SpecialCase;
+using Rozo.Db.EF;
 
 namespace Rozo.Db
 {
     public class TagRepository : IRepository<Tag>
     {
-        private static List<Tag> tags = new List<Tag>() 
-        { 
-            new Tag() { Id = 0, Name = "Matematika 1", Questions = new List<Question>() }, 
-            new Tag() { Id = 1, Name = "Fizika 1", Questions = new List<Question>() }, 
-            new Tag() { Id = 2, Name = "Osnove elektrotehnike", Questions = new List<Question>() },
-            new Tag() { Id = 3, Name = "Programiranje i programsko inženjerstvo", Questions = new List<Question>() } 
-        };
 
         public IEnumerable<Tag> GetAll()
         {
-            return tags;
+                return new RozoContext().Tags;
         }
 
         public Tag GetById(int id)
         {
-            // TODO: Refactor, maybe exception handling
-            var results = tags.Where(q => q.Id == id);
+                // TODO: Refactor, maybe exception handling
+            var results = new RozoContext().Tags.Where(q => q.Id == id);
 
-            if (results.Count() == 1)
-            {
-                return results.ElementAt(0);
-            }
-            else
-            {
-                return new MissingTag();
-            }
+                if (results.Count() == 1)
+                {
+                    return results.ElementAt(0);
+                }
+                else
+                {
+                    return new MissingTag();
+                }
+                        
         }
 
         public void Create(Tag item)
         {
-            tags.Add(item);
+            using (var context = new RozoContext())
+            {
+                context.Tags.Add(item);
+                context.SaveChanges();
+            }
+            
         }
 
         public void Update(Tag item)
         {
-            if (tags.Contains(item))
+            try
             {
-                var itemToUpdate = tags.Single(t => t.Id == item.Id);
-                itemToUpdate.Name = item.Name;
+                using (var context = new RozoContext())
+                {
+                    if (context.Tags.Contains(item))
+                    {
+                        var itemToUpdate = context.Tags.Single(t => t.Id == item.Id);
+                        itemToUpdate.Name = item.Name;
+                        context.SaveChanges();
+                    }
+                }
             }
+            catch
+            {
+                throw;
+                // LOG
+            }
+            
         }
 
         public void Delete(Tag item)
         {
-            tags.Remove(item);
+            using (var context = new RozoContext())
+            {
+                context.Tags.Remove(item);
+                context.SaveChanges();
+            }
+            
         }
 
         public void DeleteById(int id)
         {
-            tags.Remove(tags.Single(t => t.Id == id));
+            using (var context = new RozoContext())
+            {
+                var tag = context.Tags.Single(t => t.Id == id);
+                context.Tags.Remove(tag);
+                context.SaveChanges();
+            }
         }
     }
 }

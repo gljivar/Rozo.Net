@@ -46,3 +46,5 @@ C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web.Tests\
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web.Tests\bin\Debug\Microsoft.Practices.Unity.xml
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web.Tests\obj\Debug\Rozo.Web.Tests.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web.Tests\obj\Debug\Rozo.Web.Tests.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Web.Tests\bin\Debug\EntityFramework.xml

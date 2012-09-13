@@ -9,7 +9,7 @@ namespace Rozo.Model
 {
     public class Tag : IModelObject, IEquatable<Tag>
     {
-        //[ScaffoldColumn(false)]
+        [ScaffoldColumn(false)]
         public virtual int Id
         {
             get;
@@ -23,11 +23,11 @@ namespace Rozo.Model
             set;
         }
 
-        public virtual List<Question> Questions
-        {
-            get;
-            set;
-        }
+        //public virtual List<Question> Questions
+        //{
+        //    get;
+        //    set;
+        //}
 
         #region Overriden Methods
 

@@ -23,13 +23,13 @@ namespace Rozo.Model.SpecialCase
             }
         }
 
-        public override List<Question> Questions
-        {
-            get
-            {
-                return new List<Question>();
-            }
-        }
+        //public override List<Question> Questions
+        //{
+        //    get
+        //    {
+        //        return new List<Question>();
+        //    }
+        //}
     }
 
 }

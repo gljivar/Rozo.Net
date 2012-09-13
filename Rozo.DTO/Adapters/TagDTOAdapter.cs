@@ -15,7 +15,7 @@ namespace Rozo.DTO.Adapters
 
             dto.Id = modelObject.Id;
             dto.Name = modelObject.Name;
-            dto.Questions = new QuestionDTOAdapter().InitializeDTOs(modelObject.Questions).ToList();
+            //dto.Questions = new QuestionDTOAdapter().InitializeDTOs(modelObject.Questions).ToList();
 
             return dto;
         }
@@ -36,6 +36,16 @@ namespace Rozo.DTO.Adapters
             {
                 yield return InitializeBaseDTO(modelObject);
             }
+        }
+
+        public Tag InitializeBaseModelObject(TagBaseDTO dto)
+        {
+            Tag tag = new Tag();
+
+            tag.Id = dto.Id;
+            tag.Name = dto.Name;
+
+            return tag;
         }
     }
 }
