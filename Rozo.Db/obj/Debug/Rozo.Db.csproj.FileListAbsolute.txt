@@ -7,3 +7,6 @@ C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\bin\Deb
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\obj\Debug\Rozo.Db.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\obj\Debug\Rozo.Db.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\bin\Debug\Rozo.Db.dll.config
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\bin\Debug\EntityFramework.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Db\bin\Debug\EntityFramework.xml

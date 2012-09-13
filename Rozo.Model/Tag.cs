@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Utility.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace Rozo.Model
 {
     public class Tag : IModelObject, IEquatable<Tag>
     {
+        //[ScaffoldColumn(false)]
         public virtual int Id
         {
             get;
             set;
         }
 
+        [Required]
         public virtual string Name
         {
             get;
