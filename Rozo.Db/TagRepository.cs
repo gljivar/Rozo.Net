@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Rozo.Model;
 using Utility.Interfaces;
+using Rozo.Model.SpecialCase;
 
 namespace Rozo.Db
 {
@@ -24,27 +25,41 @@ namespace Rozo.Db
 
         public Tag GetById(int id)
         {
-            throw new NotImplementedException();
+            // TODO: Refactor, maybe exception handling
+            var results = tags.Where(q => q.Id == id);
+
+            if (results.Count() == 1)
+            {
+                return results.ElementAt(0);
+            }
+            else
+            {
+                return new MissingTag();
+            }
         }
 
         public void Create(Tag item)
         {
-            throw new NotImplementedException();
+            tags.Add(item);
         }
 
         public void Update(Tag item)
         {
-            throw new NotImplementedException();
+            if (tags.Contains(item))
+            {
+                var itemToUpdate = tags.Single(t => t.Id == item.Id);
+                itemToUpdate.Name = item.Name;
+            }
         }
 
         public void Delete(Tag item)
         {
-            throw new NotImplementedException();
+            tags.Remove(item);
         }
 
         public void DeleteById(int id)
         {
-            throw new NotImplementedException();
+            tags.Remove(tags.Single(t => t.Id == id));
         }
     }
 }

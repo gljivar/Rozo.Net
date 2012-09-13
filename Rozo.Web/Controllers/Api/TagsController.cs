@@ -43,8 +43,9 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // PUT api/tags/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, TagBaseDTO tag)
         {
+            
         }
 
         // DELETE api/tags/5
