@@ -16,9 +16,5 @@ namespace Rozo.Db
         {
         }
 
-        //public UserRepository(DbContext context)
-        //    : base(context)
-        //{
-        //}
     }
 }

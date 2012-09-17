@@ -48,9 +48,11 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // PUT api/tags/5
-        public void Put(int id, TagBaseDTO tag)
+        public void Put(int id, TagBaseDTO dto)
         {
             // TODO: Ask psyburn
+            dto.Id = id;
+            repository.Update(new TagDTOAdapter().InitializeBaseModelObject(dto));
         }
 
         // DELETE api/tags/5
