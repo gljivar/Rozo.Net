@@ -47,6 +47,7 @@
     <Compile Include="Question.cs" />
     <Compile Include="Rating.cs" />
     <Compile Include="Solution.cs" />
+    <Compile Include="SpecialCaseManager.cs" />
     <Compile Include="SpecialCase\MissingCategory.cs" />
     <Compile Include="SpecialCase\MissingProvidedAnswer.cs" />
     <Compile Include="SpecialCase\MissingQuestion.cs" />

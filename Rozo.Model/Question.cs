@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Utility.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace Rozo.Model
 {
     public class Question : IModelObject, IEquatable<Question>
     {
+        [ScaffoldColumn(false)]
         public virtual int Id
         {
             get;

@@ -14,23 +14,23 @@ namespace Rozo.Db
 
         public IEnumerable<Tag> GetAll()
         {
-                return new RozoContext().Tags;
+            return new RozoContext().Tags;
         }
 
         public Tag GetById(int id)
         {
-                // TODO: Refactor, maybe exception handling
+            // TODO: Refactor, maybe exception handling
             var results = new RozoContext().Tags.Where(q => q.Id == id);
 
-                if (results.Count() == 1)
-                {
-                    return results.ElementAt(0);
-                }
-                else
-                {
-                    return new MissingTag();
-                }
-                        
+            if (results.Count() == 1)
+            {
+                return results.ElementAt(0);
+            }
+            else
+            {
+                return new MissingTag();
+            }
+
         }
 
         public void Create(Tag item)
@@ -40,7 +40,7 @@ namespace Rozo.Db
                 context.Tags.Add(item);
                 context.SaveChanges();
             }
-            
+
         }
 
         public void Update(Tag item)
@@ -62,7 +62,7 @@ namespace Rozo.Db
                 throw;
                 // LOG
             }
-            
+
         }
 
         public void Delete(Tag item)
@@ -72,7 +72,7 @@ namespace Rozo.Db
                 context.Tags.Remove(item);
                 context.SaveChanges();
             }
-            
+
         }
 
         public void DeleteById(int id)

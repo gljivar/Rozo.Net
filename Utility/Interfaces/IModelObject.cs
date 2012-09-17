@@ -7,5 +7,6 @@ namespace Utility.Interfaces
 {
     public interface IModelObject
     {
+        int Id { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using Rozo.Model;
 using Utility.Interfaces;
 using Rozo.Db;
 using Rozo.Web.Helpers.IoC;
+using System.Data.Entity;
 
 namespace Rozo.Web
 {
@@ -34,6 +35,12 @@ namespace Rozo.Web
             unity.RegisterType<TagsController>();
             unity.RegisterType<IRepository<Tag>, TagRepository>(
                 new HierarchicalLifetimeManager());
+
+            // DbContext
+            //unity.RegisterType<Db.RepositoryBase<Tag>>();
+            //unity.RegisterType<DbContext, Db.EF.RozoContext>(
+            //    new HierarchicalLifetimeManager());
+
         }
 
     }

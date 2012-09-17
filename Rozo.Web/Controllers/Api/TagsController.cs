@@ -8,6 +8,7 @@ using Rozo.Model;
 using Utility.Interfaces;
 using Rozo.DTO;
 using Rozo.DTO.Adapters;
+using Rozo.Db;
 
 namespace Rozo.Web.Controllers.Api
 {

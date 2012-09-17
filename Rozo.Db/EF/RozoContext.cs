@@ -15,5 +15,6 @@ namespace Rozo.Db.EF
         }
 
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
