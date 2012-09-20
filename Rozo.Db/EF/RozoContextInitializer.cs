@@ -44,9 +44,15 @@ namespace Rozo.Db.EF
             categories.AddRange(parentCategories);
             categories.AddRange(childCategories);
 
+            var questions = new List<Question>()
+            {
+                new Question() { Text = "Koliko je 2 + 2?", AddedBy = users.Single(u => u.Name == "Miroslav"), Tags = new List<Tag>() { tags.Single(t => t.Name == "Vježba")}, Category = categories.Single(c => c.Name == "Matematika 1"), Open = true, Solved = false, MultipleSolutions = false }
+            };
+
             users.ForEach(u => context.Users.Add(u));
             tags.ForEach(t => context.Tags.Add(t));
             categories.ForEach(c => context.Categories.Add(c));
+            questions.ForEach(q => context.Questions.Add(q));
 
             context.SaveChanges();
         }
