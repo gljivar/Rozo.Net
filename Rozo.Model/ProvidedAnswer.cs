@@ -42,7 +42,7 @@ namespace Rozo.Model
                 return false;
             }
 
-            return Equals(obj);
+            return Equals((ProvidedAnswer)obj);
         }
 
         public bool Equals(ProvidedAnswer other)

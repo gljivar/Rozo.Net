@@ -54,7 +54,7 @@ namespace Rozo.Model
                 return false;
             }
 
-            return Equals(obj);
+            return Equals((Category)obj);
         }
 
         public bool Equals(Category other)

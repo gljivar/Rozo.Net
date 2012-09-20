@@ -16,6 +16,7 @@ namespace Rozo.Model
             set;
         }
 
+        [Required]
         public virtual string Name
         {
             get;
@@ -36,7 +37,7 @@ namespace Rozo.Model
                 return false;
             }
 
-            return Equals(obj);
+            return Equals((User)obj);
         }
 
         public bool Equals(User other)

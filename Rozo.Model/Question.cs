@@ -84,7 +84,7 @@ namespace Rozo.Model
                 return false;
             }
 
-            return Equals(obj);
+            return Equals((Question)obj);
         }
 
         public bool Equals(Question other)

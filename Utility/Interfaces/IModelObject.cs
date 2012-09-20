@@ -9,4 +9,9 @@ namespace Utility.Interfaces
     {
         int Id { get; set; }
     }
+
+    //public abstract class IModelObject
+    //{
+    //    public int Id { get; set; }
+    //}
 }

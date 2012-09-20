@@ -10,24 +10,24 @@ namespace Rozo.Model
     public class Tag : IModelObject, IEquatable<Tag>
     {
         [ScaffoldColumn(false)]
-        public virtual int Id
+        public int Id
         {
             get;
             set;
         }
 
         [Required]
-        public virtual string Name
+        public string Name
         {
             get;
             set;
         }
 
-        //public virtual List<Question> Questions
-        //{
-        //    get;
-        //    set;
-        //}
+        public virtual List<Question> Questions
+        {
+            get;
+            set;
+        }
 
         #region Overriden Methods
 
@@ -43,7 +43,7 @@ namespace Rozo.Model
                 return false;
             }
 
-            return Equals(obj);
+            return Equals((Tag)obj);
         }
 
         public bool Equals(Tag other)

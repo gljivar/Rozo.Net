@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Rozo.Model.SpecialCase
 {
+    // TODO: vratiti missing tag gdje se pojavljivat treba
     public class MissingTag : Tag
     {
-        public override int Id
+        public new int Id
         {
             get
             {
@@ -15,7 +16,7 @@ namespace Rozo.Model.SpecialCase
             }
         }
 
-        public override string Name
+        public new string Name
         {
             get
             {

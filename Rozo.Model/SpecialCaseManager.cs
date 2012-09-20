@@ -33,7 +33,7 @@ namespace Rozo.Model
             }
             else if (o.FullName == typeof(Tag).FullName)
             {
-                return new MissingTag();
+                return null; // new MissingTag();
             }
             else if (o.FullName == typeof(User).FullName)
             {

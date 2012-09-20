@@ -28,6 +28,17 @@ namespace Rozo.Model
             set;
         }
 
+        public Question Question
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
         #region Overriden Methods
 
         public override bool Equals(object obj)
@@ -42,7 +53,7 @@ namespace Rozo.Model
                 return false;
             }
 
-            return Equals(obj);
+            return Equals((Rating)obj);
         }
 
         public bool Equals(Rating other)

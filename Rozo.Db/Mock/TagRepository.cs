@@ -39,7 +39,7 @@ namespace Rozo.Db.Mock
             }
             else
             {
-                return new MissingTag();
+                return null; //new MissingTag();
             }
         }
 

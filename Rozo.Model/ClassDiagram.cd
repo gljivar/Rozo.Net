@@ -73,9 +73,12 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAgAAAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAgAAAAAQAAAAAAIAEAAAAAAAAAAA=</HashCode>
       <FileName>Tag.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Questions" />
+    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Rozo.Model.User">
@@ -102,12 +105,13 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACABAIAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACABAIAAAAAAAAgAAAAAAAAAAAAIAEAAAAAAAAAAA=</HashCode>
       <FileName>Rating.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Solution" />
       <Property Name="RatedBy" />
+      <Property Name="Question" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>

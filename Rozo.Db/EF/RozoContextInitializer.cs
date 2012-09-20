@@ -19,20 +19,35 @@ namespace Rozo.Db.EF
 
             var tags = new List<Tag>() 
             { 
-                new Tag() { Name = "Matematika 1" }, 
-                new Tag() { Name = "Fizika 1" }, 
-                new Tag() { Name = "Osnove elektrotehnike"},
-                new Tag() { Name = "Programiranje i programsko inženjerstvo" } 
-
-                //new Tag() { Id = 0, Name = "Matematika 1", Questions = new List<Question>() }, 
-                //new Tag() { Id = 1, Name = "Fizika 1", Questions = new List<Question>() }, 
-                //new Tag() { Id = 2, Name = "Osnove elektrotehnike", Questions = new List<Question>() },
-                //new Tag() { Id = 3, Name = "Programiranje i programsko inženjerstvo", Questions = new List<Question>() } 
+                new Tag() { Name = "Pitanja s prvog međuispita" }, 
+                new Tag() { Name = "Pitanje s drugog međuispita" }, 
+                new Tag() { Name = "Pitanje sa završnog međuispita"},
+                new Tag() { Name = "Vježba" } 
             };
+
+            var parentCategories = new List<Category>()
+            {
+                new Category() { Name = "Prvi semestar", CanAddQuestion = false },
+                new Category() { Name = "Drugi semestar", CanAddQuestion = false },
+            };
+
+            var childCategories = new List<Category>()
+            {
+                    new Category() { Name = "Matematika 1", CanAddQuestion = true, Parent = parentCategories.Single(c => c.Name == "Prvi semestar")},
+                    new Category() { Name = "Osnove elektrotehnike", CanAddQuestion = true, Parent = parentCategories.Single(c => c.Name == "Prvi semestar") },
+                    new Category() { Name = "Fizika 1", CanAddQuestion = true, Parent = parentCategories.Single(c => c.Name == "Prvi semestar") },
+                    new Category() { Name = "Programiranje i programsko inženjerstvo", CanAddQuestion = true, Parent = parentCategories.Single(c => c.Name == "Prvi semestar") },
+                    new Category() { Name = "Fizika 2", CanAddQuestion = true, Parent = parentCategories.Single(c => c.Name == "Drugi semestar") }
+            };
+
+            var categories = new List<Category>();
+            categories.AddRange(parentCategories);
+            categories.AddRange(childCategories);
 
             users.ForEach(u => context.Users.Add(u));
             tags.ForEach(t => context.Tags.Add(t));
-            
+            categories.ForEach(c => context.Categories.Add(c));
+
             context.SaveChanges();
         }
     }
