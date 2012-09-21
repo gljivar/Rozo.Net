@@ -12,18 +12,11 @@ using Rozo.DTO;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class QuestionsController : ApiController
+    public class QuestionsController : BaseController<Question>
     {
-        private readonly IRepository<Question> repository;
-
         public QuestionsController(IRepository<Question> repository)
+            : base(repository)
         {
-            if (repository == null)
-            {
-                // TODO: Log exception (ELMAH)??
-                throw new ArgumentNullException("Reposotory not set");
-            }
-            this.repository = repository;
         }
 
         // GET api/question

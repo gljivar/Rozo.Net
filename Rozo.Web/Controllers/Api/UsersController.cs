@@ -9,36 +9,36 @@ using Utility.Interfaces;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class CategoriesController : BaseController<Category>
+    public class UsersController : BaseController<User>
     {
-        public CategoriesController(IRepository<Category> repository)
+        public UsersController(IRepository<User> repository)
             : base(repository)
         {
-        }
+        } 
 
-        // GET api/category
+        // GET api/users
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/category/5
+        // GET api/users/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/category
+        // POST api/users
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/category/5
+        // PUT api/users/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/category/5
+        // DELETE api/users/5
         public void Delete(int id)
         {
         }

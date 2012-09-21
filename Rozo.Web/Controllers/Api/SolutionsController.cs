@@ -9,9 +9,9 @@ using Utility.Interfaces;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class CategoriesController : BaseController<Category>
+    public class SolutionsController : BaseController<Solution>
     {
-        public CategoriesController(IRepository<Category> repository)
+        public SolutionsController(IRepository<Solution> repository)
             : base(repository)
         {
         }

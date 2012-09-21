@@ -30,13 +30,8 @@ namespace Rozo.Model
 
         public Question Question
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         #region Overriden Methods

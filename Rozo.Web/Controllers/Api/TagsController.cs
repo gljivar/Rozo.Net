@@ -12,18 +12,11 @@ using Rozo.Db;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class TagsController : ApiController
+    public class TagsController : BaseController<Tag>
     {
-        private IRepository<Tag> repository;
-
         public TagsController(IRepository<Tag> repository)
+            : base(repository)
         {
-            if (repository == null)
-            {
-                // TODO: Log exception (ELMAH)??
-                throw new ArgumentNullException("Repository not set");
-            }
-            this.repository = repository;
         }
 
         // GET api/tags

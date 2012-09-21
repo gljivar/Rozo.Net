@@ -26,20 +26,37 @@ namespace Rozo.Web
 
         private static void RegisterTypes(IUnityContainer unity)
         {
-            // Questions
-            unity.RegisterType<QuestionsController>();
-            unity.RegisterType<IRepository<Question>, QuestionRepository>(
-                new HierarchicalLifetimeManager());
-
             // Tags
             unity.RegisterType<TagsController>();
             unity.RegisterType<IRepository<Tag>, TagRepository>(
                 new HierarchicalLifetimeManager());
 
-            // DbContext
-            //unity.RegisterType<Db.RepositoryBase<Tag>>();
-            //unity.RegisterType<DbContext, Db.EF.RozoContext>(
-            //    new HierarchicalLifetimeManager());
+            // Categories
+            unity.RegisterType<CategoriesController>();
+            unity.RegisterType<IRepository<Category>, CategoryRepository>(
+                new HierarchicalLifetimeManager());
+
+            // Users
+            unity.RegisterType<UsersController>();
+            unity.RegisterType<IRepository<User>, UserRepository>(
+                new HierarchicalLifetimeManager());
+
+            // Questions
+            unity.RegisterType<QuestionsController>();
+            unity.RegisterType<IRepository<Question>, QuestionRepository>(
+                new HierarchicalLifetimeManager());
+
+            // Solutions
+            unity.RegisterType<SolutionsController>();
+            unity.RegisterType<IRepository<Solution>, SolutionRepository>(
+                new HierarchicalLifetimeManager());
+
+            // Ratings
+            // No
+
+            // ProvidedAnswers
+            // No
+            
 
         }
 
