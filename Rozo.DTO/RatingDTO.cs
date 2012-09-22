@@ -8,22 +8,5 @@ namespace Rozo.DTO
 {
     public class RatingDTO : IDTO
     {
-        public int Id
-        {
-            get;
-            set;
-        }
-
-        public int Solution
-        {
-            get;
-            set;
-        }
-
-        public UserDTO RatedBy
-        {
-            get;
-            set;
-        }
     }
 }

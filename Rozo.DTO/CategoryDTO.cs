@@ -6,32 +6,8 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class CategoryDTO : IDTO
+    public class CategoryDTO : CategoryBaseDTO
     {
-        public int Id
-        {
-            get;
-            set;
-        }
-
-        public string Name
-        {
-            get;
-            set;
-        }
-
-        public int? Parent
-        {
-            get;
-            set;
-        }
-
-        public bool CanAddQuestion
-        {
-            get;
-            set;
-        }
-
         public List<QuestionDTO> Questions
         {
             get;

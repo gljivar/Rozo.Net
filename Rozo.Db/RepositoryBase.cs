@@ -37,10 +37,12 @@ namespace Rozo.Db
             }
         }
 
-        public void Create(T item)
+        public T Create(T item)
         {
             this.context.Set<T>().Add(item);
             this.context.SaveChanges();
+
+            return item;
         }
 
         public void Update(T item)

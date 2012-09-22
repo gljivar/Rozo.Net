@@ -52,9 +52,11 @@ namespace Rozo.Db.Mock
             }
         }
 
-        public void Create(Question item)
+        public Question Create(Question item)
         {
             questions.Add(item);
+
+            return item;
         }
 
         public void Update(Question item)
@@ -75,6 +77,12 @@ namespace Rozo.Db.Mock
                 //questions.Remove(questions.Single(q => q.Id == idToRemove));
                 questions.Remove(questionToRemove);
             }
+        }
+
+
+        public Question CreateAndReturn(Question item)
+        {
+            throw new NotImplementedException();
         }
     }
 }

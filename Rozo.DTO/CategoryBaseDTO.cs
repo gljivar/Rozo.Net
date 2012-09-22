@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class UserDTO : UserBaseDTO
+    public class CategoryBaseDTO
     {
         public int Id
         {
@@ -15,6 +14,18 @@ namespace Rozo.DTO
         }
 
         public string Name
+        {
+            get;
+            set;
+        }
+
+        public int? Parent
+        {
+            get;
+            set;
+        }
+
+        public bool CanAddQuestion
         {
             get;
             set;

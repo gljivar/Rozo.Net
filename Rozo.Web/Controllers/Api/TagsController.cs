@@ -32,12 +32,14 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // POST api/tags
-        public void Post(TagBaseDTO dto) //TagBaseDTO dto) //[FromBody]string value)
+        public HttpResponseMessage Post(TagBaseDTO dto)
         {
-            repository.Create(new TagDTOAdapter().InitializeBaseModelObject(dto));
+            var createdDto = new TagDTOAdapter().InitializeBaseDTO(repository.Create(new TagDTOAdapter().InitializeBaseModelObject(dto)));
+            var response = Request.CreateResponse<TagBaseDTO>(HttpStatusCode.Created, createdDto);
 
-            // Set status to 201
-            // Put url of resource in header
+            string uri = Url.Link("DefaultApi", new { id = createdDto.Id });
+            response.Headers.Location = new Uri(uri);
+            return response;
         }
 
         // PUT api/tags/5

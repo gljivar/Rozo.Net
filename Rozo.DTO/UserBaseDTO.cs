@@ -6,7 +6,7 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class UserDTO : UserBaseDTO
+    public class UserBaseDTO : IDTO
     {
         public int Id
         {

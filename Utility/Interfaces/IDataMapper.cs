@@ -7,7 +7,7 @@ namespace Utility.Interfaces
 {
     public interface IDataMapper<T>
     {
-        void Create(T item);
+        T Create(T item); 
         void Update(T item);
         void Delete(T item);
 

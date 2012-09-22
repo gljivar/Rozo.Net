@@ -6,24 +6,7 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class ProvidedAnswerDTO : IDTO
+    public class ProvidedAnswerDTO : ProvidedAnswerBaseDTO
     {
-        public int Id
-        {
-            get;
-            set;
-        }
-
-        public string ProvidedAnswer
-        {
-            get;
-            set;
-        }
-
-        public int Question
-        {
-            get;
-            set;
-        }
     }
 }

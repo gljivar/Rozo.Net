@@ -6,7 +6,7 @@ using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class UserDTO : UserBaseDTO
+    public class RatingDTO : IDTO
     {
         public int Id
         {
@@ -14,7 +14,13 @@ namespace Rozo.DTO
             set;
         }
 
-        public string Name
+        public int Solution
+        {
+            get;
+            set;
+        }
+
+        public UserDTO RatedBy
         {
             get;
             set;

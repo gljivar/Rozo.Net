@@ -43,9 +43,10 @@ namespace Rozo.Db.Mock
             }
         }
 
-        public void Create(Tag item)
+        public Tag Create(Tag item)
         {
             tags.Add(item);
+            return item;
         }
 
         public void Update(Tag item)
@@ -65,6 +66,12 @@ namespace Rozo.Db.Mock
         public void DeleteById(int id)
         {
             tags.Remove(tags.Single(t => t.Id == id));
+        }
+
+
+        public Tag CreateAndReturn(Tag item)
+        {
+            throw new NotImplementedException();
         }
     }
 }
