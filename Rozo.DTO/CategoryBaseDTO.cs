@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Interfaces;
 
 namespace Rozo.DTO
 {
-    public class CategoryBaseDTO
+    public class CategoryBaseDTO : IDTO
     {
         public int Id
         {

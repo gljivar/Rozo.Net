@@ -6,10 +6,11 @@ using System.Net.Http;
 using System.Web.Http;
 using Rozo.Model;
 using Utility.Interfaces;
+using Rozo.DTO;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class CategoriesController : BaseController<Category>
+    public class CategoriesController : BaseController<Category, CategoryBaseDTO, CategoryDTO>
     {
         public CategoriesController(IRepository<Category> repository)
             : base(repository)
@@ -38,9 +39,9 @@ namespace Rozo.Web.Controllers.Api
         {
         }
 
-        // DELETE api/category/5
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/category/5
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

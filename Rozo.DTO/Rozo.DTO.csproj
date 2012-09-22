@@ -40,11 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\DTOAdapter.cs" />
     <Compile Include="Adapters\DTOAdapterBase.cs" />
     <Compile Include="Adapters\QuestionDTOAdapter.cs" />
     <Compile Include="Adapters\TagDTOAdapter.cs" />
     <Compile Include="Adapters\UserDTOAdapter.cs" />
+    <Compile Include="Attributes\IgnorableBaseDTOPropertyAttribute.cs" />
+    <Compile Include="Attributes\ModelDTOPropertyAttribute.cs" />
+    <Compile Include="CategoryBaseDTO.cs" />
     <Compile Include="CategoryDTO.cs" />
+    <Compile Include="UserBaseDTO.cs" />
+    <Compile Include="SolutionBaseDTO.cs" />
+    <Compile Include="RatingBaseDTO.cs" />
+    <Compile Include="ProvidedAnswerBaseDTO.cs" />
     <Compile Include="TagBaseDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvidedAnswerDTO.cs" />

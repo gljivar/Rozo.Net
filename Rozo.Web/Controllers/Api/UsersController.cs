@@ -6,10 +6,11 @@ using System.Net.Http;
 using System.Web.Http;
 using Rozo.Model;
 using Utility.Interfaces;
+using Rozo.DTO;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class UsersController : BaseController<User>
+    public class UsersController : BaseController<User, UserBaseDTO, UserDTO>
     {
         public UsersController(IRepository<User> repository)
             : base(repository)
@@ -39,8 +40,8 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // DELETE api/users/5
-        public void Delete(int id)
-        {
-        }
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

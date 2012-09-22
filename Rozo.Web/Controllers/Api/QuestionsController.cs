@@ -12,7 +12,7 @@ using Rozo.DTO;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class QuestionsController : BaseController<Question>
+    public class QuestionsController : BaseController<Question, QuestionBaseDTO, QuestionDTO>
     {
         public QuestionsController(IRepository<Question> repository)
             : base(repository)
@@ -46,10 +46,10 @@ namespace Rozo.Web.Controllers.Api
         {
         }
 
-        // DELETE api/question/5
-        public void Delete(int id)
-        {
-            repository.DeleteById(id);
-        }
+        //// DELETE api/question/5
+        //public void Delete(int id)
+        //{
+        //    repository.DeleteById(id);
+        //}
     }
 }

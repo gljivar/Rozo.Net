@@ -7,5 +7,6 @@ namespace Utility.Interfaces
 {
     public interface IDTOBase
     {
+        int Id { get; set; }
     }
 }

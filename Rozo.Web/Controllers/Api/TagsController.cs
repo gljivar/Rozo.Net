@@ -12,7 +12,7 @@ using Rozo.Db;
 
 namespace Rozo.Web.Controllers.Api
 {
-    public class TagsController : BaseController<Tag>
+    public class TagsController : BaseController<Tag, TagBaseDTO, TagDTO>
     {
         public TagsController(IRepository<Tag> repository)
             : base(repository)
@@ -20,10 +20,10 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // GET api/tags
-        public IEnumerable<TagBaseDTO> Get()
-        {
-            return new TagDTOAdapter().InitializeBaseDTOs(repository.GetAll());
-        }
+        //public IEnumerable<TagBaseDTO> Get()
+        //{
+        //    return new TagDTOAdapter().InitializeBaseDTOs(repository.GetAll());
+        //}
 
         // GET api/tags/5
         public TagDTO Get(int id)
@@ -51,9 +51,9 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // DELETE api/tags/5
-        public void Delete(int id)
-        {
-            repository.DeleteById(id);
-        }
+        //public void Delete(int id)
+        //{
+        //    repository.DeleteById(id);
+        //}
     }
 }
