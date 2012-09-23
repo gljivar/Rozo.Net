@@ -50,7 +50,7 @@ namespace Rozo.Web.Controllers.Api
         }
 
 
-        //// PUT api/types/5
+        // PUT api/types/5
         public void Put(int id, TBaseDTO dto)
         {
             // TODO: Ask psyburn

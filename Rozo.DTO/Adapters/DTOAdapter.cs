@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Utility.Interfaces;
 using System.Reflection;
+using Rozo.DTO.Attributes;
 
 namespace Rozo.DTO.Adapters
 {
@@ -56,8 +57,19 @@ namespace Rozo.DTO.Adapters
 
                 var value = modelObjectPi.GetValue(modelObject, null);
 
-                // TODO: For every object, make model to DTO transformation
-                dtoType.GetProperty(dtoPi.Name).SetValue(dto, value, null);
+                if (value is System.Collections.IList && value.GetType().IsGenericType)
+                {
+                    var modelDTOProperty = dtoPi.GetCustomAttributes(typeof(ModelDTOPropertyAttribute), true).Single() as ModelDTOPropertyAttribute;
+                    var modelType = modelDTOProperty.ModelPropertyType;
+
+                   // TODO: Fix 
+                }
+                else
+                {
+                    // TODO: For every object, make model to DTO transformation
+                    dtoType.GetProperty(dtoPi.Name).SetValue(dto, value, null);
+                }
+
             }
 
             return dto;
