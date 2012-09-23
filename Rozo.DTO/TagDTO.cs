@@ -10,6 +10,7 @@ namespace Rozo.DTO
     public class TagDTO : TagBaseDTO
     {
         [IgnorableBaseDTOProperty]
+        [ModelDTOProperty("Questions", typeof(Rozo.Model.Question))]
         public List<QuestionDTO> Questions
         {
             get;

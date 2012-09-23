@@ -5,13 +5,15 @@ using System.Text;
 
 namespace Rozo.DTO.Attributes
 {
-    public class ModelDTOPropertyAttribute
+    public class ModelDTOPropertyAttribute : Attribute
     {
         public string ModelPropertyName { get; set; }
+        public Type ModelPropertyType { get; set; }
 
-        public ModelDTOPropertyAttribute(string modelPropertyName)
+        public ModelDTOPropertyAttribute(string modelPropertyName, Type modelPropertyType)
         {
             this.ModelPropertyName = modelPropertyName;
+            this.ModelPropertyType = modelPropertyType;
         }
     }
 }

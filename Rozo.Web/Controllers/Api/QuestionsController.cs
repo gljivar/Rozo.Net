@@ -19,32 +19,32 @@ namespace Rozo.Web.Controllers.Api
         {
         }
 
-        // GET api/question
-        public IEnumerable<QuestionBaseDTO> Get()
-        {
-            return new QuestionDTOAdapter().InitializeBaseDTOs(repository.GetAll());
-        }
+        //// GET api/question
+        //public IEnumerable<QuestionBaseDTO> Get()
+        //{
+        //    return new QuestionDTOAdapter().InitializeBaseDTOs(repository.GetAll());
+        //}
 
-        // GET api/question/5
-        public QuestionDTO Get(int id)
-        {
-            var question = repository.GetById(id);
-            if (question is MissingQuestion)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
-            return new QuestionDTOAdapter().InitializeDTO(question);
-        }
+        //// GET api/question/5
+        //public QuestionDTO Get(int id)
+        //{
+        //    var question = repository.GetById(id);
+        //    if (question is MissingQuestion)
+        //    {
+        //        throw new HttpResponseException(HttpStatusCode.NotFound);
+        //    }
+        //    return new QuestionDTOAdapter().InitializeDTO(question);
+        //}
 
-        // POST api/question
-        public void Post(QuestionDTO question)
-        {
-        }
+        //// POST api/question
+        //public void Post(QuestionDTO question)
+        //{
+        //}
 
-        // PUT api/question/5
-        public void Put(int id, QuestionDTO question)
-        {
-        }
+        //// PUT api/question/5
+        //public void Put(int id, QuestionDTO question)
+        //{
+        //}
 
         //// DELETE api/question/5
         //public void Delete(int id)

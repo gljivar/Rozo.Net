@@ -41,19 +41,48 @@ namespace Rozo.DTO.Adapters
             }
         }
 
-        //public QuestionBaseDTO InitializeBaseDTO(Question modelObject)
-        //{
-        //    var dto = new QuestionBaseDTO();
+        public static DT InitializeDTO(MT modelObject)
+        {
+            Type dtoType = typeof(DT);
+            Type modelObjectType = typeof(MT);
 
-        //    //dto.Id = modelObject.Id;
-        //    //dto.Question = modelObject.Text;
-        //    //dto.Category = modelObject.Category != null ? (int?)modelObject.Category.Id : (int?)null;
-        //    ////dto.AddedBy = new UserDTOAdapter().InitializeDTO(question.AddedBy);
-        //    //dto.Solved = modelObject.Solved;
-        //    //dto.Open = modelObject.Open;
-        //    //dto.MultipleSolutions = modelObject.MultipleSolutions;
+            var dto = Activator.CreateInstance(dtoType) as DT;
 
-        //    return dto;
-        //}
+            foreach (PropertyInfo dtoPi in dtoType.GetProperties())
+            {
+                // TODO: Check for Ignorable and Name attributes
+                // This is basic implementation
+                PropertyInfo modelObjectPi = modelObjectType.GetProperty(dtoPi.Name);
+
+                var value = modelObjectPi.GetValue(modelObject, null);
+
+                // TODO: For every object, make model to DTO transformation
+                dtoType.GetProperty(dtoPi.Name).SetValue(dto, value, null);
+            }
+
+            return dto;
+        }
+
+        public static MT InitializeBaseModelObject(DTBase dto)
+        {
+            Type dtoType = typeof(DTBase);
+            Type modelObjectType = typeof(MT);
+
+            var modelObject = Activator.CreateInstance(modelObjectType) as MT;
+
+            foreach (PropertyInfo dtoPi in dtoType.GetProperties())
+            {
+                // TODO: Check for Ignorable and Name attributes
+                // This is basic implementation
+                PropertyInfo modelObjectPi = modelObjectType.GetProperty(dtoPi.Name);
+
+                var value = dtoPi.GetValue(dto, null);
+
+                // TODO: For every object, make model to DTO transformation
+                modelObjectType.GetProperty(modelObjectPi.Name).SetValue(modelObject, value, null);
+            }
+
+            return modelObject;
+        }
     }
 }
