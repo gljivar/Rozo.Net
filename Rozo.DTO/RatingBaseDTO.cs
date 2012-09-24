@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Utility.Interfaces;
+using Rozo.DTO.Attributes;
+using Rozo.Model;
 
 namespace Rozo.DTO
 {
@@ -14,13 +16,15 @@ namespace Rozo.DTO
             set;
         }
 
+        [PrimitiveProperty("Solution", "Id")]
         public int Solution
         {
             get;
             set;
         }
 
-        public UserDTO RatedBy
+        [ComplexProperty("RatedBy")]
+        public UserBaseDTO RatedBy
         {
             get;
             set;

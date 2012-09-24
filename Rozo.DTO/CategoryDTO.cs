@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Utility.Interfaces;
+using Rozo.DTO.Attributes;
 
 namespace Rozo.DTO
 {
     public class CategoryDTO : CategoryBaseDTO
     {
-        public List<QuestionDTO> Questions
+        [ComplexListProperty("Questions")]
+        public List<QuestionBaseDTO> Questions
         {
             get;
             set;

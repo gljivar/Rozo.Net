@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Utility.Interfaces;
+using Rozo.DTO.Attributes;
 
 namespace Rozo.DTO
 {
     public class QuestionDTO : QuestionBaseDTO
     {
-        public List<ProvidedAnswerDTO> ProvidedAnswers
+        [ComplexListProperty("ProvidedAnswers")]
+        public List<ProvidedAnswerBaseDTO> ProvidedAnswers
         {
             get;
             set;
         }
 
-        public List<TagDTO> Tags
+        [ComplexListProperty("Tags")]
+        public List<TagBaseDTO> Tags
         {
             get;
             set;
         }
 
-        public List<SolutionDTO> Solutions
+        [ComplexListProperty("Solutions")]
+        public List<SolutionBaseDTO> Solutions
         {
             get;
             set;

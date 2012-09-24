@@ -35,6 +35,7 @@ namespace Rozo.Web.Controllers.Api
         //// GET api/types/5
         public TDTO Get(int id)
         {
+            // TODO: Watch for Special Case pattern: like MissingQuestion, don't call adapter
             return DTOAdapter<T, TBaseDTO, TDTO>.InitializeDTO(repository.GetById(id));
         }
 

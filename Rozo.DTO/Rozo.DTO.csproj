@@ -42,11 +42,15 @@
   <ItemGroup>
     <Compile Include="Adapters\DTOAdapter.cs" />
     <Compile Include="Adapters\DTOAdapterBase.cs" />
+    <Compile Include="Adapters\DTOAdapterManager.cs" />
     <Compile Include="Adapters\QuestionDTOAdapter.cs" />
     <Compile Include="Adapters\TagDTOAdapter.cs" />
     <Compile Include="Adapters\UserDTOAdapter.cs" />
-    <Compile Include="Attributes\IgnorableBaseDTOPropertyAttribute.cs" />
-    <Compile Include="Attributes\ModelDTOPropertyAttribute.cs" />
+    <Compile Include="Attributes\ComplexPropertyAttribute.cs" />
+    <Compile Include="Attributes\ComplexListPropertyAttribute.cs" />
+    <Compile Include="Attributes\PrimitivePropertyAttribute.cs" />
+    <Compile Include="Attributes\PropertyAttribute.cs" />
+    <Compile Include="Attributes\PropertyNameAttribute.cs" />
     <Compile Include="CategoryBaseDTO.cs" />
     <Compile Include="CategoryDTO.cs" />
     <Compile Include="UserBaseDTO.cs" />

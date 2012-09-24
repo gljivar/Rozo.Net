@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Utility.Interfaces;
+using Rozo.DTO.Attributes;
+using Rozo.Model;
 
 namespace Rozo.DTO
 {
@@ -14,18 +16,21 @@ namespace Rozo.DTO
             set;
         }
 
+        [PropertyName("Text")]
         public string Question
         {
             get;
             set;
         }
 
+        [PrimitiveProperty("Category", "Id")]
         public int? Category
         {
             get;
             set;
         }
 
+        [PrimitiveProperty("User", "Id")]
         public int AddedBy
         {
             get;
