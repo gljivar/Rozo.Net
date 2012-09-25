@@ -53,6 +53,15 @@ namespace Rozo.DTO.Adapters
 
                     dtoType.GetProperty(dtoPi.Name).SetValue(dto, newValue, null);
                 }
+                else if (customAttributes.Any(a => a.GetType() == typeof(ComplexListPropertyAttribute) && value != null))
+                {
+                    var modelDTOProperty = dtoPi.GetCustomAttributes(typeof(ComplexListPropertyAttribute), true).Single() as ComplexListPropertyAttribute;
+
+                    var newValue = new DTOAdapterManager().InitializeBaseDTOs(value);
+
+                    dtoType.GetProperty(dtoPi.Name).SetValue(dto, newValue, null);
+
+                }
                 else
                 {
                     dtoType.GetProperty(dtoPi.Name).SetValue(dto, value, null);

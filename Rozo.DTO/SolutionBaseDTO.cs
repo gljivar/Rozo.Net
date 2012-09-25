@@ -43,6 +43,11 @@ namespace Rozo.DTO
             set;
         }
 
-   
+        [ComplexListProperty("ProvidedAnswers")]
+        public List<ProvidedAnswerBaseDTO> ProvidedAnswers
+        {
+            get;
+            set;
+        }
     }
 }

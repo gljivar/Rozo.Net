@@ -9,13 +9,6 @@ namespace Rozo.DTO
 {
     public class SolutionDTO : SolutionBaseDTO
     {
-        [ComplexListProperty("ProvidedAnswers")]
-        public List<ProvidedAnswerBaseDTO> ProvidedAnswers
-        {
-            get;
-            set;
-        }
-
         [ComplexListProperty("Ratings")]
         public List<RatingBaseDTO> Ratings
         {
