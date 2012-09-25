@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
 
 namespace Rozo.Web.Helpers
 {
@@ -11,7 +12,7 @@ namespace Rozo.Web.Helpers
     public class Pagination
     {
         /// <summary>
-        /// Number of pages
+        /// Total number of pages
         /// </summary>
         public int Pages { get; set; }
 
@@ -19,6 +20,12 @@ namespace Rozo.Web.Helpers
         /// Current page
         /// </summary>
         public int Current { get; set; }
+
+        /// <summary>
+        /// Limit num of results per page
+        /// </summary>
+        [DefaultValue(10)]
+        public int Limit { get; set; }
 
         /// <summary>
         /// Uri of next results in pagination

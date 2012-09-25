@@ -17,6 +17,11 @@ namespace Rozo.Db
             this.context = context;
         }
 
+        public int Count()
+        {
+            return this.context.Set<T>().Count();
+        }
+
         public IEnumerable<T> GetAll()
         {
             return this.context.Set<T>().ToList().AsEnumerable();

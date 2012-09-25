@@ -31,6 +31,10 @@ namespace Rozo.Db.Mock
             }
         };
 
+        public int Count()
+        {
+            return 1;
+        }
 
         public IEnumerable<Question> GetAll()
         {

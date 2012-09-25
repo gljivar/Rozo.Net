@@ -7,6 +7,7 @@ namespace Utility.Interfaces
 {
     public interface IRepository<T> : IDataMapper<T> where T : class
     {
+        int Count();
         IEnumerable<T> GetAll();
         T GetById(int id);
     }

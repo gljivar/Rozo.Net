@@ -27,12 +27,22 @@ namespace Rozo.Web.Controllers.Api
         }
 
         // GET api/types
-        public Rozo.Web.Helpers.ResultWrapper<TBaseDTO> Get()
+        public Rozo.Web.Helpers.ResultWrapper<TBaseDTO> Get(int offset = 0, int limit = 10)
         {
-            var data = DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseDTOs(repository.GetAll());
+            offset = offset < 0 ? 0 : offset;
+            limit = limit < 0 ? 10 : limit;
+
+            var data = DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseDTOs(
+                repository.GetAll().Skip(offset).Take(limit)
+                );
 
             // TODO: Fill pagination
             var pagination = new Rozo.Web.Helpers.Pagination();
+            pagination.Current = offset;
+            pagination.Limit = limit;
+            pagination.Pages = repository.Count() / limit;
+            pagination.Next = Url.Link("DefaultApi", new { offset = offset + limit, limit = limit });
+            pagination.Previous = Url.Link("DefaultApi", new { offset = offset - limit < 0 ? 0 : offset - limit, limit = limit });
 
             return new Rozo.Web.Helpers.ResultWrapper<TBaseDTO>(data, pagination);
         }

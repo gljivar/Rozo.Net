@@ -23,6 +23,11 @@ namespace Rozo.Db.Mock
             //new Tag() { Id = 3, Name = "Programiranje i programsko inženjerstvo", Questions = new List<Question>() } 
         };
 
+        public int Count()
+        {
+            return 1;
+        }
+
         public IEnumerable<Tag> GetAll()
         {
             return tags;

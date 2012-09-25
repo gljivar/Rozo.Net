@@ -7,7 +7,7 @@ using Rozo.Model;
 
 namespace Rozo.Db.EF
 {
-    public class RozoContextInitializer : DropCreateDatabaseAlways<RozoContext> // DropCreateDatabaseIfModelChanges<RozoContext> //
+    public class RozoContextInitializer : DropCreateDatabaseIfModelChanges<RozoContext> // DropCreateDatabaseAlways<RozoContext> // 
     {
         protected override void Seed(RozoContext context)
         {
