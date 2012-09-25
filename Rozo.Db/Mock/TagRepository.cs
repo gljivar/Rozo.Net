@@ -49,7 +49,7 @@ namespace Rozo.Db.Mock
             return item;
         }
 
-        public void Update(Tag item)
+        public void Update(int id,Tag item)
         {
             if (tags.Contains(item))
             {

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Interfaces;
 
 namespace Rozo.Model.SpecialCase
 {
-    public class MissingCategory : Category
+    public class MissingCategory : Category, IMissingModelObject
     {
         public override int Id
         {

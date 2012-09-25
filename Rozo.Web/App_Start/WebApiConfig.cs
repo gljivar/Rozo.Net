@@ -27,9 +27,19 @@ namespace Rozo.Web
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            // Configure JSON formatter
+
             var json = config.Formatters.JsonFormatter;
+
+            // Enable to handle references
+            //json.SerializerSettings.PreserveReferencesHandling =
+            //    Newtonsoft.Json.PreserveReferencesHandling.Objects;
+
+            // Enable not to handle references
             json.SerializerSettings.PreserveReferencesHandling =
-                Newtonsoft.Json.PreserveReferencesHandling.Objects;
+                Newtonsoft.Json.PreserveReferencesHandling.None;
+
+            json.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 

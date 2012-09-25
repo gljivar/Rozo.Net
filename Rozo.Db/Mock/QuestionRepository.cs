@@ -59,7 +59,7 @@ namespace Rozo.Db.Mock
             return item;
         }
 
-        public void Update(Question item)
+        public void Update(int id, Question item)
         {
             throw new NotImplementedException();
         }

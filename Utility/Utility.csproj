@@ -44,6 +44,7 @@
     <Compile Include="Interfaces\IDTO.cs" />
     <Compile Include="Interfaces\IDTOAdapter.cs" />
     <Compile Include="Interfaces\IDTOBase.cs" />
+    <Compile Include="Interfaces\IMissingModelObject.cs" />
     <Compile Include="Interfaces\IModelObject.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

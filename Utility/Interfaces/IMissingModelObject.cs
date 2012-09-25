@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Utility.Interfaces
 {
-    public interface IModelObject
+    public interface IMissingModelObject : IModelObject
     {
-        int Id { get; set; }
     }
-
 }

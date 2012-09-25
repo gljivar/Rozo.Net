@@ -26,17 +26,33 @@ namespace Rozo.Web.Controllers.Api
             this.repository = repository;
         }
 
-        //// GET api/types
-        public IEnumerable<TBaseDTO> Get()
+        // GET api/types
+        public Rozo.Web.Helpers.ResultWrapper<TBaseDTO> Get()
         {
-            return DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseDTOs(repository.GetAll());
+            var data = DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseDTOs(repository.GetAll());
+
+            // TODO: Fill pagination
+            var pagination = new Rozo.Web.Helpers.Pagination();
+
+            return new Rozo.Web.Helpers.ResultWrapper<TBaseDTO>(data, pagination);
         }
 
-        //// GET api/types/5
-        public TDTO Get(int id)
+        // GET api/types/5
+        public HttpResponseMessage Get(int id)
         {
-            // TODO: Watch for Special Case pattern: like MissingQuestion, don't call adapter
-            return DTOAdapter<T, TBaseDTO, TDTO>.InitializeDTO(repository.GetById(id));
+            var data = repository.GetById(id);
+
+            if (data is IMissingModelObject)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Not found.");
+            }
+            else
+            {
+                return Request.CreateResponse<TDTO>(
+                    HttpStatusCode.OK, 
+                    DTOAdapter<T, TBaseDTO, TDTO>.InitializeDTO(data)
+                    );
+            }
         }
 
         // POST api/types
@@ -54,9 +70,8 @@ namespace Rozo.Web.Controllers.Api
         // PUT api/types/5
         public void Put(int id, TBaseDTO dto)
         {
-            // TODO: Ask psyburn
-            dto.Id = id;
-            repository.Update(DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseModelObject(dto));
+            // TODO: Fix DTO to model mapping
+            repository.Update(id, DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseModelObject(dto));
         }
 
         // DELETE api/types/5

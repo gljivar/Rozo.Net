@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Utility.Interfaces;
 
 namespace Rozo.Model.SpecialCase
 {
-    // TODO: vratiti missing tag gdje se pojavljivat treba
-    public class MissingTag : Tag
+    public class MissingTag : Tag, IMissingModelObject
     {
-        public new int Id
+        public override int Id
         {
             get
             {
@@ -16,7 +16,7 @@ namespace Rozo.Model.SpecialCase
             }
         }
 
-        public new string Name
+        public override string Name
         {
             get
             {
@@ -24,13 +24,13 @@ namespace Rozo.Model.SpecialCase
             }
         }
 
-        //public override List<Question> Questions
-        //{
-        //    get
-        //    {
-        //        return new List<Question>();
-        //    }
-        //}
+        public override List<Question> Questions
+        {
+            get
+            {
+                return new List<Question>();
+            }
+        }
     }
 
 }

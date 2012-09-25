@@ -45,10 +45,14 @@ namespace Rozo.Db
             return item;
         }
 
-        public void Update(T item)
+        /// <summary>
+        /// Update needs to be idempotent
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="item"></param>
+        public void Update(int id, T item)
         {
-            // TODO: Refactor, maybe exception handling
-            var results = this.context.Set<T>().Where(q => q.Id == item.Id);
+            var results = this.context.Set<T>().Where(q => q.Id == id);
 
             if (results.Count() == 1)
             {

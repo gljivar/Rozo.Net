@@ -10,14 +10,14 @@ namespace Rozo.Model
     public class Tag : IModelObject, IEquatable<Tag>
     {
         [ScaffoldColumn(false)]
-        public int Id
+        public virtual int Id
         {
             get;
             set;
         }
 
         [Required]
-        public string Name
+        public virtual string Name
         {
             get;
             set;
