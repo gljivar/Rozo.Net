@@ -7,7 +7,7 @@ using Rozo.Model;
 
 namespace Rozo.Db.EF
 {
-    public class RozoContextInitializer : DropCreateDatabaseIfModelChanges<RozoContext> // DropCreateDatabaseAlways<RozoContext> // 
+    public class RozoContextInitializer : DropCreateDatabaseIfModelChanges<RozoContext> // DropCreateDatabaseAlways<RozoContext> //
     {
         protected override void Seed(RozoContext context)
         {
@@ -23,7 +23,15 @@ namespace Rozo.Db.EF
                 new Tag() { Name = "Pitanja s prvog međuispita" }, 
                 new Tag() { Name = "Pitanje s drugog međuispita" }, 
                 new Tag() { Name = "Pitanje sa završnog međuispita"},
-                new Tag() { Name = "Vježba" } 
+                new Tag() { Name = "Vježba" },
+                new Tag() { Name = "Teorija" }, 
+                new Tag() { Name = "Praktični rad" }, 
+                new Tag() { Name = "Elementarna matematika"},
+                new Tag() { Name = "Teško" } ,
+                new Tag() { Name = "Laboratorijske vježbe" }, 
+                new Tag() { Name = "Singleton" }, 
+                new Tag() { Name = "Patterns"},
+                new Tag() { Name = "Elektroenergetika" } 
             };
 
             var parentCategories = new List<Category>()

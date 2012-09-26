@@ -138,6 +138,7 @@
     <Compile Include="Helpers\IoC\IoCContainer.cs" />
     <Compile Include="Helpers\IoC\ScopeContainer.cs" />
     <Compile Include="Helpers\Pagination.cs" />
+    <Compile Include="Helpers\PaginationHelper.cs" />
     <Compile Include="Helpers\ResultWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

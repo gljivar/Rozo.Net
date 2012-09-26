@@ -22,12 +22,6 @@ namespace Rozo.Web.Helpers
         public int Current { get; set; }
 
         /// <summary>
-        /// Limit num of results per page
-        /// </summary>
-        [DefaultValue(10)]
-        public int Limit { get; set; }
-
-        /// <summary>
         /// Uri of next results in pagination
         /// </summary>
         public string Next { get; set; }

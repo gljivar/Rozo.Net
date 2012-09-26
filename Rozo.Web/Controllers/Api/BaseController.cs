@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Utility.Interfaces;
 using Rozo.DTO.Adapters;
+using Rozo.Web.Helpers;
 
 namespace Rozo.Web.Controllers.Api
 {
@@ -29,20 +30,16 @@ namespace Rozo.Web.Controllers.Api
         // GET api/types
         public Rozo.Web.Helpers.ResultWrapper<TBaseDTO> Get(int offset = 0, int limit = 10)
         {
-            offset = offset < 0 ? 0 : offset;
-            limit = limit < 0 ? 10 : limit;
+            // Offset is by default 0 and can't be negative
+            offset = offset <= 0 ? 0 : offset;
+            // limit is default 10 and can't be negative
+            limit = limit <= 0 ? 10 : limit;
 
             var data = DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseDTOs(
                 repository.GetAll().Skip(offset).Take(limit)
                 );
 
-            // TODO: Fill pagination
-            var pagination = new Rozo.Web.Helpers.Pagination();
-            pagination.Current = offset;
-            pagination.Limit = limit;
-            pagination.Pages = repository.Count() / limit;
-            pagination.Next = Url.Link("DefaultApi", new { offset = offset + limit, limit = limit });
-            pagination.Previous = Url.Link("DefaultApi", new { offset = offset - limit < 0 ? 0 : offset - limit, limit = limit });
+            var pagination = PaginationHelper.CreatePagination(Url, offset, limit, repository.Count());
 
             return new Rozo.Web.Helpers.ResultWrapper<TBaseDTO>(data, pagination);
         }
