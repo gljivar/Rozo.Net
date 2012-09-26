@@ -23,14 +23,14 @@ namespace Rozo.DTO
             set;
         }
 
-        [PrimitiveProperty("Question", "Id")]
+        [PrimitiveProperty("Question", "Id", typeof(Question))]
         public int Question
         {
             get;
             set;
         }
 
-        [ComplexProperty("AddedBy")]
+        [ComplexProperty("AddedBy", typeof(User))]
         public UserBaseDTO AddedBy
         {
             get;
@@ -43,7 +43,7 @@ namespace Rozo.DTO
             set;
         }
 
-        [ComplexListProperty("ProvidedAnswers")]
+        [ComplexListProperty("ProvidedAnswers", typeof(List<ProvidedAnswer>))]
         public List<ProvidedAnswerBaseDTO> ProvidedAnswers
         {
             get;

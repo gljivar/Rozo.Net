@@ -16,14 +16,14 @@ namespace Rozo.DTO
             set;
         }
 
-        [PrimitiveProperty("Solution", "Id")]
+        [PrimitiveProperty("Solution", "Id", typeof(Solution))]
         public int Solution
         {
             get;
             set;
         }
 
-        [ComplexProperty("RatedBy")]
+        [ComplexProperty("RatedBy", typeof(User))]
         public UserBaseDTO RatedBy
         {
             get;

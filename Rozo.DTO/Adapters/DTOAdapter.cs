@@ -71,14 +71,6 @@ namespace Rozo.DTO.Adapters
             return dto;
         }
 
-        public static IEnumerable<DTBase> InitializeBaseDTOs(IEnumerable<MT> modelObjects)
-        {
-            foreach (var modelObject in modelObjects)
-            {
-                yield return InitializeBaseDTO(modelObject);
-            }
-        }
-
         public static DT InitializeDTO(MT modelObject)
         {
             // TODO: Watch for Special Case pattern: like MissingQuestion
@@ -140,6 +132,14 @@ namespace Rozo.DTO.Adapters
             return dto;
         }
 
+        public static IEnumerable<DTBase> InitializeBaseDTOs(IEnumerable<MT> modelObjects)
+        {
+            foreach (var modelObject in modelObjects)
+            {
+                yield return InitializeBaseDTO(modelObject);
+            }
+        }
+
         public static MT InitializeBaseModelObject(DTBase dto)
         {
             Type dtoType = typeof(DTBase);
@@ -159,56 +159,53 @@ namespace Rozo.DTO.Adapters
                 }
 
                 PropertyInfo modelObjectPi = modelObjectType.GetProperty(propertyName);
-                var value = modelObjectPi.GetValue(modelObject, null);
+                var value = dtoPi.GetValue(dto, null);
 
                 // Map
                 if (customAttributes.Any(a => a.GetType() == typeof(PrimitivePropertyAttribute) && value != null))
                 {
                     var primitiveProperty = dtoPi.GetCustomAttributes(typeof(PrimitivePropertyAttribute), true).Single() as PrimitivePropertyAttribute;
 
-                    PropertyInfo propertyPi = value.GetType().GetProperty(primitiveProperty.ModelPropertyPropertyName);
+                    var newValue = Activator.CreateInstance(primitiveProperty.ModelPropertyType) as IModelObject;
+                    newValue.Id = (int)value;
 
-                    var newValue = propertyPi.GetValue(value, null);
-
-                    dtoType.GetProperty(dtoPi.Name).SetValue(dto, newValue, null);
+                    modelObjectType.GetProperty(propertyName).SetValue(modelObject, newValue, null);
                 }
                 else if (customAttributes.Any(a => a.GetType() == typeof(ComplexPropertyAttribute) && value != null))
                 {
-                    var modelDTOPrimitiveProperty = dtoPi.GetCustomAttributes(typeof(ComplexPropertyAttribute), true).Single() as ComplexPropertyAttribute;
+                    var primitiveProperty = dtoPi.GetCustomAttributes(typeof(ComplexPropertyAttribute), true).Single() as ComplexPropertyAttribute;
 
-                    var newValue = new DTOAdapterManager().InitializeBaseDTO(value);
+                    var newValue = Activator.CreateInstance(primitiveProperty.ModelPropertyType) as IModelObject;
+                    newValue.Id = (value as IDTOBase).Id;
 
-                    dtoType.GetProperty(dtoPi.Name).SetValue(dto, newValue, null);
+                    modelObjectType.GetProperty(propertyName).SetValue(modelObject, newValue, null);
+                }
+                else if (customAttributes.Any(a => a.GetType() == typeof(ComplexListPropertyAttribute) && value != null))
+                {
+                    var primitiveProperty = dtoPi.GetCustomAttributes(typeof(ComplexListPropertyAttribute), true).Single() as ComplexListPropertyAttribute;
+
+                    // Here I am using dynamic values, because I can't cast newValue to List<IModelObject> because of covariance
+                    // and in the loop I have to use dynamic because I can't add IModelObject to list because of same problem
+                    dynamic newValue = Activator.CreateInstance(primitiveProperty.ModelPropertyType) as IEnumerable<IModelObject>;
+
+                    Type itemType = newValue.GetType().GetGenericArguments()[0]; // use this...
+                    
+                    foreach (var dtoBase in value as IEnumerable<IDTOBase>)
+                    {
+                        dynamic listValue = Activator.CreateInstance(itemType);
+                        listValue.Id = dtoBase.Id;
+                        newValue.Add(listValue);
+                    }
+
+                    modelObjectType.GetProperty(propertyName).SetValue(modelObject, newValue, null);
                 }
                 else
                 {
-                    dtoType.GetProperty(dtoPi.Name).SetValue(dto, value, null);
+                    modelObjectType.GetProperty(propertyName).SetValue(modelObject, value, null);
                 }
             }
 
             return modelObject;
         }
-
-        //public static MT InitializeBaseModelObject(DTBase dto)
-        //{
-        //    Type dtoType = typeof(DTBase);
-        //    Type modelObjectType = typeof(MT);
-
-        //    var modelObject = Activator.CreateInstance(modelObjectType) as MT;
-
-        //    foreach (PropertyInfo dtoPi in dtoType.GetProperties())
-        //    {
-        //        // TODO: Check for Ignorable and Name attributes
-        //        // This is basic implementation
-        //        PropertyInfo modelObjectPi = modelObjectType.GetProperty(dtoPi.Name);
-
-        //        var value = dtoPi.GetValue(dto, null);
-
-        //        // TODO: For every object, make model to DTO transformation
-        //        modelObjectType.GetProperty(modelObjectPi.Name).SetValue(modelObject, value, null);
-        //    }
-
-        //    return modelObject;
-        //}
     }
 }

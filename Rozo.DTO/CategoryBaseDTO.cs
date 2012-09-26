@@ -22,7 +22,7 @@ namespace Rozo.DTO
             set;
         }
 
-        [PrimitiveProperty("Category", "Id")]
+        [PrimitiveProperty("Category", "Id", typeof(Category))]
         public int? Parent
         {
             get;

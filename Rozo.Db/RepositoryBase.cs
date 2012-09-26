@@ -64,6 +64,8 @@ namespace Rozo.Db
                 var result = (results as IEnumerable<T>).ElementAt(0);
 
                 var entry = this.context.Entry(result);
+                item.Id = id;
+                entry.State = System.Data.EntityState.Modified;
                 entry.CurrentValues.SetValues(item);
 
                 this.context.SaveChanges();

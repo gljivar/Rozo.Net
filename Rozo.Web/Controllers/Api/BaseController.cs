@@ -35,6 +35,7 @@ namespace Rozo.Web.Controllers.Api
             // limit is default 10 and can't be negative
             limit = limit <= 0 ? 10 : limit;
 
+            // TODO: Implement OrderBy and filtering
             var data = DTOAdapter<T, TBaseDTO, TDTO>.InitializeBaseDTOs(
                 repository.GetAll().Skip(offset).Take(limit)
                 );

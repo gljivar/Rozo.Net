@@ -23,7 +23,7 @@ namespace Rozo.DTO
             set;
         }
 
-        [PrimitiveProperty("Question", "Id")]
+        [PrimitiveProperty("Question", "Id", typeof(Question))]
         public int Question
         {
             get;
