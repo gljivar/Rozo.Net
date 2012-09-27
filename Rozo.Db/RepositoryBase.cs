@@ -57,6 +57,16 @@ namespace Rozo.Db
         /// <param name="item"></param>
         public void Update(int id, T item)
         {
+            // TODO: Check this out
+            //var manager = project.Manager;
+            //project.Manager = null;
+            //context.Entry(project).State = EntityState.Modified;
+            //// the line before did attach the object to the context
+            //// with project.Manager == null
+            //project.Manager = manager;
+            //// this "fakes" a change of the relationship, EF will detect this
+            //// and update the relatonship
+
             var results = this.context.Set<T>().Where(q => q.Id == id);
 
             if (results.Count() == 1)
@@ -67,7 +77,7 @@ namespace Rozo.Db
                 item.Id = id;
                 entry.State = System.Data.EntityState.Modified;
                 entry.CurrentValues.SetValues(item);
-
+                
                 this.context.SaveChanges();
             }
         }

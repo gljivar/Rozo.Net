@@ -43,9 +43,6 @@
     <Compile Include="Adapters\DTOAdapter.cs" />
     <Compile Include="Adapters\DTOAdapterBase.cs" />
     <Compile Include="Adapters\DTOAdapterManager.cs" />
-    <Compile Include="Adapters\QuestionDTOAdapter.cs" />
-    <Compile Include="Adapters\TagDTOAdapter.cs" />
-    <Compile Include="Adapters\UserDTOAdapter.cs" />
     <Compile Include="Attributes\ComplexPropertyAttribute.cs" />
     <Compile Include="Attributes\ComplexListPropertyAttribute.cs" />
     <Compile Include="Attributes\PrimitivePropertyAttribute.cs" />
