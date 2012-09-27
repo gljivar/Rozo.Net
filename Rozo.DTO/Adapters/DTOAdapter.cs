@@ -137,7 +137,7 @@ namespace Rozo.DTO.Adapters
                 {
                     var primitiveProperty = dtoPi.GetCustomAttributes(typeof(ComplexListPropertyAttribute), true).Single() as ComplexListPropertyAttribute;
 
-                    // Here I am using dynamic values, because I can't cast newValue to List<IModelObject> because of covariance
+                    // Justification: Here I am using dynamic values, because I can't cast newValue to List<IModelObject> because of covariance
                     // and in the loop I have to use dynamic because I can't add IModelObject to list because of same problem
                     dynamic newValue = Activator.CreateInstance(primitiveProperty.ModelPropertyType) as IEnumerable<IModelObject>;
 
