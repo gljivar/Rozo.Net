@@ -16,18 +16,21 @@ namespace Rozo.Model
             set;
         }
 
+        [Required]
         public virtual Solution Solution
         {
             get;
             set;
         }
 
+        [Required]
         public virtual User RatedBy
         {
             get;
             set;
         }
 
+        [Required]
         public Question Question
         {
             get;

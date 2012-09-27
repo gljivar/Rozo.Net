@@ -28,6 +28,7 @@ namespace Rozo.Db.EF
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>(); 
 
             MapTag(modelBuilder);
             MapUser(modelBuilder);

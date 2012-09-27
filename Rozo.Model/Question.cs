@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Utility.Interfaces;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace Rozo.Model
 {
@@ -16,6 +17,7 @@ namespace Rozo.Model
             set;
         }
 
+        [Required]
         public virtual string Text
         {
             get;
@@ -28,24 +30,28 @@ namespace Rozo.Model
             set;
         }
 
+        [Required]
         public virtual User AddedBy
         {
             get;
             set;
         }
 
+        [DefaultValue(false)]
         public virtual bool Solved
         {
             get;
             set;
         }
 
+        [DefaultValue(true)]
         public virtual bool Open
         {
             get;
             set;
         }
 
+        [DefaultValue(false)]
         public virtual bool MultipleSolutions
         {
             get;

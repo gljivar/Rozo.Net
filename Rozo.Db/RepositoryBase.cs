@@ -44,6 +44,37 @@ namespace Rozo.Db
 
         public virtual T Create(T item)
         {
+            Type modelObjectType = item.GetType();
+
+            // Justification: Manual retrieving and setting of properties on mapped object, because Entity Framework can't do it automatically
+            foreach (var propertyInfo in modelObjectType.GetProperties())
+            {
+                var propertyValue = modelObjectType.GetProperty(propertyInfo.Name).GetValue(item, null);
+                if (propertyValue is IModelObject)
+                {
+                    var newValue = this.context.Set(propertyValue.GetType()).Find((propertyValue as IModelObject).Id);
+                    modelObjectType.GetProperty(propertyInfo.Name).SetValue(item, newValue, null);
+                }
+                else if (propertyValue is IEnumerable<IModelObject>)
+                {
+                    Type listItemType = propertyValue.GetType().GetGenericArguments()[0];
+
+                    // Justification: Here I am using dynamic values, because I can't cast newValue to List<IModelObject> because of covariance
+                    // and in the loop I have to use dynamic because I can't add IModelObject to list because of same problem
+
+                    // TODO: Fix this, because it adds new items to list if they don't exist. This needs to be controlled somehow.
+                    dynamic newValue = Activator.CreateInstance(propertyValue.GetType()) as IEnumerable<IModelObject>;
+
+                    foreach (var listItem in propertyValue as IEnumerable<IModelObject>)
+                    {
+                        dynamic listValue = this.context.Set(listItemType).Find((listItem as IModelObject).Id);
+                        newValue.Add(listValue);
+                    }
+
+                    modelObjectType.GetProperty(propertyInfo.Name).SetValue(item, newValue, null);
+                }
+            }
+
             this.context.Set<T>().Add(item);
             this.context.SaveChanges();
 

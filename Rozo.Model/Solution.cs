@@ -16,18 +16,21 @@ namespace Rozo.Model
             set;
         }
 
+        [Required]
         public virtual string Text
         {
             get;
             set;
         }
 
+        [Required]
         public virtual Question Question
         {
             get;
             set;
         }
 
+        [Required]
         public virtual User AddedBy
         {
             get;
