@@ -23,7 +23,7 @@ namespace Rozo.Model
             set;
         }
 
-        [Required]
+        //[Required]
         public virtual Question Question
         {
             get;

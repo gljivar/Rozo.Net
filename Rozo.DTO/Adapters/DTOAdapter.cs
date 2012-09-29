@@ -26,6 +26,11 @@ namespace Rozo.DTO.Adapters
         private static Typee InitializeDTOGenericMethod<Typee>(MT modelObject) 
             where Typee : class, IDTOBase
         {
+            if (modelObject == null)
+            {
+                return default(Typee);
+            }
+
             // TODO: Watch for Special Case pattern: like MissingQuestion
 
             Type dtoType = typeof(Typee);
@@ -115,6 +120,7 @@ namespace Rozo.DTO.Adapters
                 var value = dtoPi.GetValue(dto, null);
 
                 // Map
+                // Primitive property will never be 
                 if (customAttributes.Any(a => a.GetType() == typeof(PrimitivePropertyAttribute) && value != null))
                 {
                     var primitiveProperty = dtoPi.GetCustomAttributes(typeof(PrimitivePropertyAttribute), true).Single() as PrimitivePropertyAttribute;
@@ -129,7 +135,27 @@ namespace Rozo.DTO.Adapters
                     var primitiveProperty = dtoPi.GetCustomAttributes(typeof(ComplexPropertyAttribute), true).Single() as ComplexPropertyAttribute;
 
                     var newValue = Activator.CreateInstance(primitiveProperty.ModelPropertyType) as IModelObject;
+
+                    // TODO: Check if this is even needed
+                    // Map all properties of primitive type
+                    //foreach (var fieldPi in value.GetType().GetProperties())
+                    //{
+                    //    var fieldPiName = fieldPi.Name;
+                    //    if (fieldPi.GetCustomAttributes(true).Any(a => a.GetType() == typeof(PropertyNameAttribute)))
+                    //    {
+                    //        fieldPiName = (fieldPi.GetCustomAttributes(true).First() as PropertyNameAttribute).ModelPropertyName;
+                    //    }
+
+                    //    //PropertyInfo modelObjectPi = modelObjectType.GetProperty(propertyName);
+                    //    //var value = dtoPi.GetValue(dto, null);
+
+                    //    value.GetType().GetProperty(fieldPiName).SetValue(modelObject, fieldPiName, null);
+                    //}
+
                     newValue.Id = (value as IDTOBase).Id;
+
+                    // Won't work because DTBase is expected
+                    //var newValue = InitializeBaseModelObject(dtoType.GetProperty(dtoPi.Name).GetValue(dto, null) as IDTOBase);
 
                     modelObjectType.GetProperty(propertyName).SetValue(modelObject, newValue, null);
                 }
@@ -145,9 +171,31 @@ namespace Rozo.DTO.Adapters
                     
                     foreach (var dtoBase in value as IEnumerable<IDTOBase>)
                     {
-                        dynamic listValue = Activator.CreateInstance(itemType);
-                        listValue.Id = dtoBase.Id;
-                        newValue.Add(listValue);
+                        dynamic listItem = Activator.CreateInstance(itemType);
+
+                        // Map all properties of primitive type
+                        foreach (var fieldPi in dtoBase.GetType().GetProperties())
+                        {
+                            var fieldPiName = fieldPi.Name;
+                            if (fieldPi.GetCustomAttributes(true).Any(a => a.GetType() == typeof(PropertyNameAttribute)))
+                            {
+                                fieldPiName = (fieldPi.GetCustomAttributes(true).First() as PropertyNameAttribute).ModelPropertyName;
+                            }
+
+                            //PropertyInfo modelObjectPi = modelObjectType.GetProperty(propertyName);
+                            //var value = dtoPi.GetValue(dto, null);
+
+                            var finalValue = dtoBase.GetType().GetProperty(fieldPi.Name).GetValue(dtoBase, null);
+
+                            if(!fieldPi.GetCustomAttributes(true).Any(a => a.GetType() == typeof(PrimitivePropertyAttribute) || a.GetType() == typeof(ComplexPropertyAttribute) || a.GetType() == typeof(ComplexListPropertyAttribute)))
+                            {
+                                listItem.GetType().GetProperty(fieldPiName).SetValue(listItem, finalValue, null);
+                            }
+                            
+                        }
+
+                        //listValue.Id = dtoBase.Id;
+                        newValue.Add(listItem);
                     }
 
                     modelObjectType.GetProperty(propertyName).SetValue(modelObject, newValue, null);

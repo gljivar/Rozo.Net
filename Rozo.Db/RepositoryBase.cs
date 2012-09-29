@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Utility.Interfaces;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace Rozo.Db
 {
@@ -67,16 +68,45 @@ namespace Rozo.Db
 
                     foreach (var listItem in propertyValue as IEnumerable<IModelObject>)
                     {
-                        dynamic listValue = this.context.Set(listItemType).Find((listItem as IModelObject).Id);
+                        dynamic listValue = (listItem as IModelObject).Id > 0 ? this.context.Set(listItemType).Find((listItem as IModelObject).Id) : null;
+
+                        // If listValue is null then a new entry should be inserted
+                        if (listValue == null)
+                        {
+                            var addedListValue = this.context.Set(listItemType).Add(listItem);
+                            this.context.SaveChanges();
+                            listValue = addedListValue;
+                        }
                         newValue.Add(listValue);
+
                     }
 
                     modelObjectType.GetProperty(propertyInfo.Name).SetValue(item, newValue, null);
                 }
+                else
+                {
+                    modelObjectType.GetProperty(propertyInfo.Name).SetValue(item, propertyValue, null);
+                }
             }
 
             this.context.Set<T>().Add(item);
-            this.context.SaveChanges();
+
+            try
+            {
+                this.context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Diagnostics.Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+
+            
 
             return item;
         }
@@ -120,18 +150,44 @@ namespace Rozo.Db
 
                         foreach (var listItem in propertyValue as IEnumerable<IModelObject>)
                         {
-                            dynamic listValue = this.context.Set(listItemType).Find((listItem as IModelObject).Id);
+                            dynamic listValue = (listItem as IModelObject).Id > 0 ? this.context.Set(listItemType).Find((listItem as IModelObject).Id) : null;
+
+                            // If listValue is null then a new entry should be inserted
+                            if (listValue == null)
+                            {
+                                var addedListValue = this.context.Set(listItemType).Add(listItem);
+                                this.context.SaveChanges();
+                                listValue = addedListValue;
+                            }
                             newValue.Add(listValue);
+
                         }
 
-                        modelObjectType.GetProperty(propertyInfo.Name).SetValue(result, newValue, null); 
+                        modelObjectType.GetProperty(propertyInfo.Name).SetValue(item, newValue, null);
+                    }
+                    else
+                    {
+                        modelObjectType.GetProperty(propertyInfo.Name).SetValue(item, propertyValue, null);
                     }
                 }
 
                 entry.State = System.Data.EntityState.Modified;
                 entry.CurrentValues.SetValues(item);
-                
-                this.context.SaveChanges();
+
+                try
+                {
+                    this.context.SaveChanges();
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Diagnostics.Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
             }
         }
 
