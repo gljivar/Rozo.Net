@@ -7,3 +7,5 @@ C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\De
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Utility.pdb
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\obj\Debug\Rozo.DTO.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\obj\Debug\Rozo.DTO.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.DTO\bin\Debug\Newtonsoft.Json.xml

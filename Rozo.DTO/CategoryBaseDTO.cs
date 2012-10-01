@@ -29,6 +29,7 @@ namespace Rozo.DTO
             set;
         }
 
+        [Newtonsoft.Json.JsonProperty("can_add_question")]
         public bool CanAddQuestion
         {
             get;

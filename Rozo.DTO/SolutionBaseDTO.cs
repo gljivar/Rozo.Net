@@ -31,12 +31,14 @@ namespace Rozo.DTO
         }
 
         [ComplexProperty("AddedBy", typeof(User))]
+        [Newtonsoft.Json.JsonProperty("add_by")]
         public UserBaseDTO AddedBy
         {
             get;
             set;
         }
 
+        [Newtonsoft.Json.JsonProperty("date_added")]
         public DateTime DateAdded
         {
             get;
@@ -44,6 +46,7 @@ namespace Rozo.DTO
         }
 
         [ComplexListProperty("ProvidedAnswers", typeof(List<ProvidedAnswer>))]
+        [Newtonsoft.Json.JsonProperty("provided_answers")]
         public List<ProvidedAnswerBaseDTO> ProvidedAnswers
         {
             get;

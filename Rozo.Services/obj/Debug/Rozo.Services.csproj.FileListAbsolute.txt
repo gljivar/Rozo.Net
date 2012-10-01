@@ -9,3 +9,5 @@ C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Services\b
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Services\bin\Debug\Utility.pdb
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Services\obj\Debug\Rozo.Services.dll
 C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Services\obj\Debug\Rozo.Services.pdb
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Miroslav\Documents\Visual Studio 2010\Projects\Rozo.Net\Rozo.Services\bin\Debug\Newtonsoft.Json.xml

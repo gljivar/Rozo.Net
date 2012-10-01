@@ -24,6 +24,7 @@ namespace Rozo.DTO
         }
 
         [ComplexProperty("RatedBy", typeof(User))]
+        [Newtonsoft.Json.JsonProperty("rated_by")]
         public UserBaseDTO RatedBy
         {
             get;

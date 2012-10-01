@@ -31,7 +31,15 @@ namespace Rozo.DTO
         }
 
         [PrimitiveProperty("User", "Id", typeof(User))]
+        [Newtonsoft.Json.JsonProperty("add_by")]
         public int AddedBy
+        {
+            get;
+            set;
+        }
+
+        [Newtonsoft.Json.JsonProperty("date_added")]
+        public DateTime DateAdded
         {
             get;
             set;
@@ -49,6 +57,7 @@ namespace Rozo.DTO
             set;
         }
 
+        [Newtonsoft.Json.JsonProperty("multiple_solutions")]
         public bool MultipleSolutions
         {
             get;
@@ -56,7 +65,15 @@ namespace Rozo.DTO
         }
 
         [ComplexListProperty("ProvidedAnswers", typeof(List<ProvidedAnswer>))]
+        [Newtonsoft.Json.JsonProperty("provided_answers")]
         public List<ProvidedAnswerBaseDTO> ProvidedAnswers
+        {
+            get;
+            set;
+        }
+
+        [ComplexListProperty("Tags", typeof(List<Tag>))]
+        public List<TagBaseDTO> Tags
         {
             get;
             set;

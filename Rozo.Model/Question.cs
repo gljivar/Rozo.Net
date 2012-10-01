@@ -37,6 +37,12 @@ namespace Rozo.Model
             set;
         }
 
+        public virtual DateTime DateAdded
+        {
+            get;
+            set;
+        }
+
         [DefaultValue(false)]
         public virtual bool Solved
         {
@@ -57,7 +63,7 @@ namespace Rozo.Model
             get;
             set;
         }
-
+        
         public virtual List<ProvidedAnswer> ProvidedAnswers
         {
             get;

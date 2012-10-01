@@ -7,7 +7,7 @@ using Rozo.Model;
 
 namespace Rozo.Db.EF
 {
-    public class RozoContextInitializer : DropCreateDatabaseAlways<RozoContext> // DropCreateDatabaseIfModelChanges<RozoContext> // 
+    public class RozoContextInitializer : DropCreateDatabaseAlways<RozoContext> // DropCreateDatabaseIfModelChanges<RozoContext> 
     {
         protected override void Seed(RozoContext context)
         {
@@ -55,8 +55,8 @@ namespace Rozo.Db.EF
 
             var questions = new List<Question>()
             {
-                new Question() { Text = "Koliko je 2 + 2?", AddedBy = users.Single(u => u.Name == "Miroslav"), Tags = new List<Tag>() { tags.Single(t => t.Name == "Vježba")}, Category = categories.Single(c => c.Name == "Matematika 1"), Open = true, Solved = false, MultipleSolutions = true },
-                new Question() { Text = "Koja je formula za težinu?", AddedBy = users.Single(u => u.Name == "Krešo"), Tags = new List<Tag>() { tags.Single(t => t.Name == "Pitanja s prvog međuispita")}, Category = categories.Single(c => c.Name == "Fizika 1"), Open = false, Solved = true, MultipleSolutions = false }
+                new Question() { Text = "Koliko je 2 + 2?", AddedBy = users.Single(u => u.Name == "Miroslav"), DateAdded = DateTime.Now, Tags = new List<Tag>() { tags.Single(t => t.Name == "Vježba")}, Category = categories.Single(c => c.Name == "Matematika 1"), Open = true, Solved = false, MultipleSolutions = true },
+                new Question() { Text = "Koja je formula za težinu?", AddedBy = users.Single(u => u.Name == "Krešo"), DateAdded = DateTime.Now, Tags = new List<Tag>() { tags.Single(t => t.Name == "Pitanja s prvog međuispita")}, Category = categories.Single(c => c.Name == "Fizika 1"), Open = false, Solved = true, MultipleSolutions = false }
             };
 
             var providedAnswers = new List<ProvidedAnswer>()

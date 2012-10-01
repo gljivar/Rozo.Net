@@ -52,12 +52,15 @@ namespace Rozo.Web
                 new HierarchicalLifetimeManager());
 
             // Ratings
-            // No
+            unity.RegisterType<RatingsController>();
+            unity.RegisterType<IRepository<Rating>, RatingRepository>(
+                new HierarchicalLifetimeManager());
 
             // ProvidedAnswers
-            // No
+            unity.RegisterType<ProvidedAnswerController>();
+            unity.RegisterType<IRepository<ProvidedAnswer>, ProvidedAnswerRepository>(
+                new HierarchicalLifetimeManager());
             
-
         }
 
     }

@@ -17,6 +17,7 @@ namespace Rozo.DTO
         }
 
         [PropertyName("Text")]
+        [Newtonsoft.Json.JsonProperty("provided_answer")]
         public string ProvidedAnswer
         {
             get;
